@@ -1,0 +1,42 @@
+{
+  "recaps": [
+    {
+      "title": "Lightning Network Workshop Recap",
+      "slug": "lightning-network-workshop-recap",
+      "date": "2025-11-20",
+      "eventTitle": "Lightning Network Workshop",
+      "summary": "Our November Lightning workshop brought together 25+ participants to learn about payment channels, routing, and hands-on node operation.",
+      "sections": [
+        {
+          "title": "Event Highlights",
+          "body": "The workshop started with an overview of Lightning Network architecture, followed by practical demonstrations of channel management and payment routing. Participants set up testnet nodes and successfully made their first Lightning payments."
+        },
+        {
+          "title": "Key Takeaways",
+          "body": "- Lightning enables instant, low-cost Bitcoin payments\n- Channel management requires understanding liquidity and routing\n- Running a node is more accessible than ever with modern tools\n- The Lightning ecosystem is growing rapidly with new applications"
+        },
+        {
+          "title": "Community Feedback",
+          "body": "Attendees appreciated the hands-on approach and practical focus. Many expressed interest in running production nodes and exploring Lightning development opportunities. Several participants are now planning to build Lightning-enabled applications."
+        },
+        {
+          "title": "What's Next",
+          "body": "Following this workshop, we're planning an advanced session on channel rebalancing and routing optimization. Stay tuned for announcements about upcoming events.",
+          "links": [
+            {
+              "text": "View Upcoming Events",
+              "url": "/events",
+              "external": false
+            }
+          ]
+        }
+      ],
+      "meta": {
+        "title": "Lightning Network Workshop Recap | Builder Vancouver",
+        "description": "Recap of our Lightning Network workshop covering payment channels, routing, and hands-on node operation.",
+        "keywords": ["recap", "lightning network", "workshop", "bitcoin", "builder vancouver"]
+      }
+    }
+  ]
+}
+

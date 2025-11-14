@@ -1,0 +1,45 @@
+{
+  "title": "Lightning Network 101",
+  "slug": "lightning-101",
+  "description": "Introduction to the Lightning Network: Bitcoin's Layer 2 payment protocol for instant, low-cost transactions.",
+  "sections": [
+    {
+      "title": "What is Lightning Network?",
+      "body": "The Lightning Network is a Layer 2 protocol built on top of Bitcoin that enables instant, low-cost payments. By creating payment channels between users, Lightning allows transactions to occur off-chain while maintaining Bitcoin's security guarantees."
+    },
+    {
+      "title": "How Lightning Works",
+      "body": "Lightning uses payment channels - two parties lock bitcoin in a multisig address and can transact unlimited times off-chain. Only the opening and closing transactions are recorded on the Bitcoin blockchain. Channels can be connected to route payments across the network."
+    },
+    {
+      "title": "Key Benefits",
+      "body": "Instant Payments: Transactions settle in milliseconds, not minutes.\nLow Fees: Routing fees are typically fractions of a cent.\nScalability: Millions of transactions per second possible.\nPrivacy: Payments don't broadcast to entire network.\nMicropayments: Enable sub-satoshi payments for streaming and metered services."
+    },
+    {
+      "title": "Use Cases",
+      "body": "Lightning enables new Bitcoin applications: streaming money, instant merchant payments, peer-to-peer transfers, gaming economies, and internet-native payment streaming. It's the foundation for Bitcoin's everyday payment layer."
+    },
+    {
+      "title": "Getting Started",
+      "body": "Try Lightning yourself with mobile wallets like Phoenix, Breez, or Zeus. Join our workshops to learn about running nodes, channel management, and building Lightning applications.",
+      "links": [
+        {
+          "text": "View Events",
+          "url": "/events",
+          "external": false
+        },
+        {
+          "text": "Lightning Labs Resources",
+          "url": "https://lightning.engineering",
+          "external": true
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "title": "Lightning Network 101 | Builder Vancouver",
+    "description": "Learn about Lightning Network: Bitcoin's Layer 2 solution for instant, low-cost payments. Understand how it works and why it matters.",
+    "keywords": ["lightning network", "bitcoin layer 2", "lightning 101", "bitcoin payments", "payment channels"]
+  }
+}
+

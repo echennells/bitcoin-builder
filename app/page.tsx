@@ -1,65 +1,119 @@
-import Image from "next/image";
+import Link from "next/link";
+import { PageContainer } from "@/components/layout/PageContainer";
+import { Heading } from "@/components/ui/Heading";
+import { Section } from "@/components/ui/Section";
+import { loadHome } from "@/lib/content";
+import { generateHomeMetadata } from "@/lib/seo";
+
+export const metadata = generateHomeMetadata();
 
 export default function Home() {
+  const content = loadHome();
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <PageContainer>
+      {/* Hero Section */}
+      <div className="mb-16 text-center">
+        <Heading level="h1" className="text-orange-400 mb-4">
+          {content.hero.heading}
+        </Heading>
+        <p className="text-xl text-neutral-300 mb-8 max-w-3xl mx-auto">
+          {content.hero.subheading}
+        </p>
+        <Link
+          href={content.hero.ctaLink}
+          className="inline-block bg-orange-400 text-neutral-950 font-bold px-8 py-3 rounded-xl hover:bg-orange-300 transition-colors"
+        >
+          {content.hero.ctaText}
+        </Link>
+      </div>
+
+      {/* Content Sections */}
+      {content.sections.map((section, index) => (
+        <Section key={index}>
+          <Heading level="h2" className="text-neutral-100 mb-4">
+            {section.title}
+          </Heading>
+          <p className="text-lg text-neutral-300 mb-6 leading-relaxed">
+            {section.body}
           </p>
+          {section.links && section.links.length > 0 && (
+            <div className="flex flex-wrap gap-4">
+              {section.links.map((link, linkIndex) => (
+                <Link
+                  key={linkIndex}
+                  href={link.url}
+                  className="text-orange-400 hover:text-orange-300 font-medium underline transition-colors"
+                  {...(link.external
+                    ? { target: "_blank", rel: "noopener noreferrer" }
+                    : {})}
+                >
+                  {link.text}
+                </Link>
+              ))}
+            </div>
+          )}
+        </Section>
+      ))}
+
+      {/* Quick Links Grid */}
+      <Section>
+        <Heading level="h2" className="text-neutral-100 mb-6">
+          Quick Links
+        </Heading>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <QuickLinkCard
+            title="Events"
+            description="View upcoming meetups and workshops"
+            href="/events"
+          />
+          <QuickLinkCard
+            title="Bitcoin 101"
+            description="Learn Bitcoin basics and fundamentals"
+            href="/bitcoin-101"
+          />
+          <QuickLinkCard
+            title="Lightning 101"
+            description="Understand the Lightning Network"
+            href="/lightning-101"
+          />
+          <QuickLinkCard
+            title="Resources"
+            description="Curated learning materials and tools"
+            href="/resources"
+          />
+          <QuickLinkCard
+            title="Recaps"
+            description="Read about past event highlights"
+            href="/recaps"
+          />
+          <QuickLinkCard
+            title="Projects"
+            description="Explore community projects"
+            href="/projects"
+          />
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+      </Section>
+    </PageContainer>
+  );
+}
+
+interface QuickLinkCardProps {
+  title: string;
+  description: string;
+  href: string;
+}
+
+function QuickLinkCard({ title, description, href }: QuickLinkCardProps) {
+  return (
+    <Link
+      href={href}
+      className="block p-6 bg-neutral-900 border border-neutral-800 rounded-xl hover:border-orange-400 transition-colors group"
+    >
+      <h3 className="text-xl font-bold text-neutral-100 mb-2 group-hover:text-orange-400 transition-colors">
+        {title}
+      </h3>
+      <p className="text-neutral-400">{description}</p>
+    </Link>
   );
 }

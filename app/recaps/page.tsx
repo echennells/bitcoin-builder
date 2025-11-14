@@ -1,0 +1,61 @@
+import Link from "next/link";
+import { PageContainer } from "@/components/layout/PageContainer";
+import { Heading } from "@/components/ui/Heading";
+import { Section } from "@/components/ui/Section";
+import { loadRecaps } from "@/lib/content";
+import { generatePageMetadata } from "@/lib/seo";
+
+export const metadata = generatePageMetadata(
+  "Event Recaps | Builder Vancouver",
+  "Read recaps and highlights from past Builder Vancouver events and workshops.",
+  ["recaps", "bitcoin", "events", "vancouver", "highlights"]
+);
+
+export default function RecapsPage() {
+  const { recaps } = loadRecaps();
+
+  return (
+    <PageContainer>
+      <Heading level="h1" className="text-orange-400 mb-4">
+        Event Recaps
+      </Heading>
+      <p className="text-xl text-neutral-300 mb-12">
+        Highlights and takeaways from past Builder Vancouver events.
+      </p>
+
+      <div className="space-y-8">
+        {recaps.map((recap) => (
+          <Section key={recap.slug}>
+            <article className="bg-neutral-900 border border-neutral-800 rounded-xl p-6 hover:border-orange-400 transition-colors">
+              <Link href={`/recaps/${recap.slug}`}>
+                <Heading level="h2" className="text-neutral-100 mb-2 hover:text-orange-400 transition-colors">
+                  {recap.title}
+                </Heading>
+              </Link>
+              <div className="text-sm text-neutral-400 mb-4">
+                <p>📅 {recap.date}</p>
+                <p>Event: {recap.eventTitle}</p>
+              </div>
+              <p className="text-neutral-300 mb-4">{recap.summary}</p>
+              <Link
+                href={`/recaps/${recap.slug}`}
+                className="inline-block text-orange-400 hover:text-orange-300 font-medium transition-colors"
+              >
+                Read More →
+              </Link>
+            </article>
+          </Section>
+        ))}
+      </div>
+
+      {recaps.length === 0 && (
+        <Section>
+          <p className="text-neutral-400 text-center py-12">
+            No recaps available yet. Check back after our next event!
+          </p>
+        </Section>
+      )}
+    </PageContainer>
+  );
+}
+

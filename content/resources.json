@@ -1,0 +1,48 @@
+{
+  "title": "Bitcoin Resources",
+  "slug": "resources",
+  "description": "Curated resources for learning about Bitcoin, Lightning Network, and Layer 2 technologies.",
+  "resources": [
+    {
+      "title": "Bitcoin.org",
+      "url": "https://bitcoin.org",
+      "description": "Official Bitcoin website with documentation, guides, and developer resources.",
+      "category": "Bitcoin Basics",
+      "tags": ["bitcoin", "documentation", "official"]
+    },
+    {
+      "title": "Lightning Network Developers",
+      "url": "https://lightning.engineering",
+      "description": "Lightning Labs resources, documentation, and tools for Lightning development.",
+      "category": "Lightning Network",
+      "tags": ["lightning", "development", "tools"]
+    },
+    {
+      "title": "Mastering Bitcoin",
+      "url": "https://github.com/bitcoinbook/bitcoinbook",
+      "description": "Comprehensive technical book by Andreas Antonopoulos covering Bitcoin in depth.",
+      "category": "Books",
+      "tags": ["book", "technical", "learning"]
+    },
+    {
+      "title": "Bitcoin Optech",
+      "url": "https://bitcoinops.org",
+      "description": "Technical newsletter and resources tracking Bitcoin development and optimization.",
+      "category": "Developer Resources",
+      "tags": ["technical", "newsletter", "development"]
+    },
+    {
+      "title": "Lightning Network Specification",
+      "url": "https://github.com/lightning/bolts",
+      "description": "BOLTs - Basis of Lightning Technology specifications and protocol details.",
+      "category": "Lightning Network",
+      "tags": ["specification", "protocol", "lightning"]
+    }
+  ],
+  "meta": {
+    "title": "Resources | Builder Vancouver",
+    "description": "Curated Bitcoin resources including documentation, books, tools, and learning materials for all levels.",
+    "keywords": ["bitcoin resources", "learning", "documentation", "lightning network", "developer tools"]
+  }
+}
+

@@ -1,0 +1,33 @@
+{
+  "title": "What to Expect at Builder Meetups",
+  "slug": "what-to-expect",
+  "description": "Learn about the format, structure, and atmosphere of Builder Vancouver meetups.",
+  "sections": [
+    {
+      "title": "Meetup Format",
+      "body": "Our meetups typically run 2-3 hours and include a mix of presentations, hands-on activities, and networking. We start with introductions, followed by the main content, and end with open discussion and collaboration time."
+    },
+    {
+      "title": "Typical Schedule",
+      "body": "6:00 PM - Doors open, networking\n6:30 PM - Welcome and introductions\n6:45 PM - Main presentation or workshop\n7:45 PM - Break\n8:00 PM - Open discussion / hands-on time\n8:30 PM - Wrap up"
+    },
+    {
+      "title": "Level of Technical Depth",
+      "body": "We cater to all skill levels. Presentations include context for beginners while diving deep enough to engage experienced developers. Don't worry if you don't understand everything - questions are encouraged and learning is collaborative."
+    },
+    {
+      "title": "What to Bring",
+      "body": "Yourself and your curiosity! For workshop sessions, bring a laptop. Having a Bitcoin wallet (mobile or hardware) can be useful but isn't required. We'll provide any other materials needed."
+    },
+    {
+      "title": "Atmosphere",
+      "body": "Expect a casual, friendly environment focused on learning and building. People are genuinely excited to share knowledge and help each other. Don't be shy - introduce yourself and ask questions!"
+    }
+  ],
+  "meta": {
+    "title": "What to Expect | Builder Vancouver",
+    "description": "Learn about Builder Vancouver meetup format, schedule, and atmosphere. Know what to bring and what to expect.",
+    "keywords": ["what to expect", "meetup format", "builder vancouver", "bitcoin events"]
+  }
+}
+

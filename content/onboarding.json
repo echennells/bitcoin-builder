@@ -1,0 +1,41 @@
+{
+  "title": "Welcome to Builder Vancouver",
+  "slug": "onboarding",
+  "description": "Everything you need to know to get started with Builder Vancouver meetups and the Bitcoin community.",
+  "sections": [
+    {
+      "title": "Getting Started",
+      "body": "Builder Vancouver welcomes everyone interested in Bitcoin, from complete beginners to experienced developers. Our community is built on collaboration, learning, and building together."
+    },
+    {
+      "title": "Before Your First Meetup",
+      "body": "No preparation required! However, if you'd like to get a head start, we recommend reviewing our Bitcoin 101 guide and What to Expect page. Bring your curiosity, questions, and laptop if you plan to participate in workshops.",
+      "links": [
+        {
+          "text": "Bitcoin 101",
+          "url": "/bitcoin-101",
+          "external": false
+        },
+        {
+          "text": "What to Expect",
+          "url": "/what-to-expect",
+          "external": false
+        }
+      ]
+    },
+    {
+      "title": "Community Guidelines",
+      "body": "Builder Vancouver is an inclusive, respectful community. We welcome all experience levels and backgrounds. Be kind, ask questions, share knowledge, and help others learn. All meetups follow the Chatham House Rule for open discussion."
+    },
+    {
+      "title": "Stay Connected",
+      "body": "Join our community channels to stay updated on events, technical discussions, and announcements. Follow us on social media and subscribe to our newsletter for the latest updates."
+    }
+  ],
+  "meta": {
+    "title": "Onboarding | Builder Vancouver",
+    "description": "Get started with Builder Vancouver. Learn what to expect and how to join the Bitcoin community.",
+    "keywords": ["onboarding", "getting started", "builder vancouver", "bitcoin community"]
+  }
+}
+

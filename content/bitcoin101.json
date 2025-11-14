@@ -1,0 +1,50 @@
+{
+  "title": "Bitcoin 101: The Basics",
+  "slug": "bitcoin-101",
+  "description": "A beginner-friendly introduction to Bitcoin fundamentals, technology, and concepts.",
+  "sections": [
+    {
+      "title": "What is Bitcoin?",
+      "body": "Bitcoin is a decentralized digital currency that enables peer-to-peer transactions without intermediaries. Created in 2009 by Satoshi Nakamoto, it operates on a distributed network maintained by thousands of nodes worldwide."
+    },
+    {
+      "title": "How Bitcoin Works",
+      "body": "Bitcoin uses blockchain technology - a public ledger of all transactions. The network is secured through proof-of-work mining, where miners compete to validate transactions and create new blocks. This process ensures security and consensus without central authority."
+    },
+    {
+      "title": "Key Concepts",
+      "body": "Wallets: Software that stores your private keys and enables transactions.\nPrivate Keys: Secret codes that prove ownership of bitcoin.\nPublic Keys/Addresses: Your receiving addresses, shared publicly.\nBlocks: Groups of transactions added to the blockchain every ~10 minutes.\nMining: The process of validating transactions and securing the network."
+    },
+    {
+      "title": "Why Bitcoin Matters",
+      "body": "Bitcoin provides financial sovereignty, censorship resistance, and a fixed supply (21 million coins). It enables permissionless innovation and financial inclusion globally. As a neutral, open protocol, Bitcoin serves as the foundation for a new financial system."
+    },
+    {
+      "title": "Learn More",
+      "body": "Ready to dive deeper? Explore Lightning Network for fast payments and Layer 2 solutions for scaling.",
+      "links": [
+        {
+          "text": "Lightning 101",
+          "url": "/lightning-101",
+          "external": false
+        },
+        {
+          "text": "Layer 2 Overview",
+          "url": "/layer-2-overview",
+          "external": false
+        },
+        {
+          "text": "Bitcoin.org",
+          "url": "https://bitcoin.org",
+          "external": true
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "title": "Bitcoin 101 | Builder Vancouver",
+    "description": "Learn Bitcoin basics: what it is, how it works, and why it matters. Beginner-friendly introduction to Bitcoin fundamentals.",
+    "keywords": ["bitcoin", "bitcoin 101", "bitcoin basics", "cryptocurrency", "blockchain"]
+  }
+}
+

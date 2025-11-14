@@ -1,0 +1,39 @@
+{
+  "events": [
+    {
+      "title": "Lightning Network Workshop",
+      "slug": "lightning-network-workshop",
+      "date": "2025-12-15",
+      "time": "6:00 PM - 8:30 PM",
+      "location": "Bitcoin Commons, Vancouver",
+      "description": "Hands-on workshop exploring Lightning Network channels, routing, and payment flows. Bring your laptop and learn to set up your own Lightning node.",
+      "sections": [
+        {
+          "title": "What You'll Learn",
+          "body": "This workshop covers the fundamentals of Lightning Network operations, including channel management, routing strategies, and practical payment applications. Participants will set up a testnet node and make their first Lightning payments."
+        },
+        {
+          "title": "Prerequisites",
+          "body": "Basic understanding of Bitcoin recommended. Laptop with Docker installed preferred but not required.",
+          "links": [
+            {
+              "text": "Install Docker",
+              "url": "https://docs.docker.com/get-docker/",
+              "external": true
+            }
+          ]
+        },
+        {
+          "title": "Schedule",
+          "body": "6:00 PM - Introduction and Setup\n6:30 PM - Lightning Network Fundamentals\n7:00 PM - Hands-on Lab\n8:00 PM - Q&A and Networking"
+        }
+      ],
+      "meta": {
+        "title": "Lightning Network Workshop | Builder Vancouver",
+        "description": "Hands-on Lightning Network workshop. Learn to set up nodes, manage channels, and make payments.",
+        "keywords": ["lightning network", "workshop", "bitcoin", "vancouver", "hands-on"]
+      }
+    }
+  ]
+}
+

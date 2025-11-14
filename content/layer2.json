@@ -1,0 +1,52 @@
+{
+  "title": "Layer 2 Overview",
+  "slug": "layer-2-overview",
+  "description": "Understanding Bitcoin Layer 2 solutions and scaling technologies beyond the base chain.",
+  "sections": [
+    {
+      "title": "What are Layer 2 Solutions?",
+      "body": "Layer 2 protocols are built on top of Bitcoin's base layer (Layer 1) to enable new functionality and scalability. They inherit Bitcoin's security while enabling features like instant payments, smart contracts, and increased transaction throughput."
+    },
+    {
+      "title": "Lightning Network",
+      "body": "The most established Layer 2, Lightning enables instant, low-cost payments through payment channels. It's production-ready with growing adoption for everyday transactions and streaming payments.",
+      "links": [
+        {
+          "text": "Lightning 101",
+          "url": "/lightning-101",
+          "external": false
+        }
+      ]
+    },
+    {
+      "title": "Emerging Layer 2s",
+      "body": "RGB: Client-side validated smart contracts on Bitcoin.\nStacks: Smart contracts with Bitcoin finality.\nLiquid: Federated sidechain for fast settlements.\nRollups: Various rollup proposals for Bitcoin scaling.\nFedimint: Federated Chaumian e-cash mints.\n\nEach approach offers different trade-offs between security, decentralization, and functionality."
+    },
+    {
+      "title": "Why Layer 2 Matters",
+      "body": "Bitcoin's base layer prioritizes security and decentralization. Layer 2s enable scaling without compromising these properties. They unlock new use cases while keeping the base layer stable and secure."
+    },
+    {
+      "title": "Build on Layer 2",
+      "body": "Interested in building? Join our community to explore Layer 2 development, experiment with new protocols, and connect with other builders working on Bitcoin's scaling future.",
+      "links": [
+        {
+          "text": "View Projects",
+          "url": "/projects",
+          "external": false
+        },
+        {
+          "text": "Upcoming Events",
+          "url": "/events",
+          "external": false
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "title": "Layer 2 Overview | Builder Vancouver",
+    "description": "Explore Bitcoin Layer 2 solutions including Lightning Network, RGB, Stacks, and more. Understand scaling and new Bitcoin capabilities.",
+    "keywords": ["layer 2", "bitcoin scaling", "lightning network", "rgb", "stacks", "bitcoin layer 2"]
+  }
+}
+
