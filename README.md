@@ -355,7 +355,25 @@ Required environment variables:
 NEXT_PUBLIC_SITE_URL=https://builder.van
 ```
 
-## Resources
+## Documentation
+
+Comprehensive guides for working with the codebase:
+
+### Development Guides
+
+- **[Architecture Documentation](docs/ARCHITECTURE.md)** - System architecture, patterns, and design decisions
+- **[Schema Development Guide](docs/SCHEMA-DEVELOPMENT.md)** - Creating and managing content schemas
+- **[Content Authoring Guide](docs/CONTENT-GUIDE.md)** - Writing and editing content
+- **[Formatting & Linting Guide](docs/FORMATTING-LINTING.md)** - Code quality and standards
+
+### Quick Start
+
+- **New to the project?** Start with [Architecture Documentation](docs/ARCHITECTURE.md)
+- **Adding content?** See [Content Authoring Guide](docs/CONTENT-GUIDE.md)
+- **Creating new schemas?** Read [Schema Development Guide](docs/SCHEMA-DEVELOPMENT.md)
+- **Code quality?** Review [Formatting & Linting Guide](docs/FORMATTING-LINTING.md)
+
+## External Resources
 
 ### Next.js Documentation
 

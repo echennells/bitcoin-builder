@@ -457,8 +457,15 @@ When discussing:
 
 ## Resources
 
+### Documentation
+
+- [Schema Development Guide](./SCHEMA-DEVELOPMENT.md) - Creating and managing schemas
+- [Architecture Documentation](./ARCHITECTURE.md) - System architecture and patterns
+- [Formatting & Linting Guide](./FORMATTING-LINTING.md) - Code quality standards
+
+### Examples & Tools
+
 - [Example Content File](/examples/example-content-file.json)
-- [Architecture Documentation](/docs/ARCHITECTURE.md)
 - [JSON Validator](https://jsonlint.com/) - Validate JSON syntax
 - [Zod Documentation](https://zod.dev) - Schema validation
 

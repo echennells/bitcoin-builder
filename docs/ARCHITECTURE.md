@@ -389,12 +389,16 @@ if (!event) {
 
 ### Adding New Content Type
 
+For a quick reference:
+
 1. Define Zod schema in `/lib/schemas.ts`
 2. Infer TypeScript type in `/lib/types.ts`
 3. Create loader function in `/lib/content.ts`
 4. Add to content registry in `/lib/content/registry.ts`
 5. Update validation script if needed
 6. Create example in `/examples`
+
+**For detailed instructions with code examples, see [Schema Development Guide](./SCHEMA-DEVELOPMENT.md).**
 
 ## Deployment
 
@@ -468,11 +472,18 @@ The site is optimized for static hosting:
 
 ## Additional Resources
 
+### Documentation
+
+- [Schema Development Guide](./SCHEMA-DEVELOPMENT.md) - Creating and managing schemas
+- [Content Guide](./CONTENT-GUIDE.md) - Content authoring guide
+- [Formatting & Linting](./FORMATTING-LINTING.md) - Code quality standards
+
+### External Resources
+
 - [Next.js Documentation](https://nextjs.org/docs)
 - [Zod Documentation](https://zod.dev)
 - [Schema.org](https://schema.org)
 - [Example Files](/examples)
-- [Content Guide](/docs/CONTENT-GUIDE.md)
 
 ## Questions & Contribution
 
