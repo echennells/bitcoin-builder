@@ -1,9 +1,11 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import { Navbar } from "@/components/layout/Navbar";
-import { JsonLd } from "@/components/seo/JsonLd";
-import { createOrganizationSchema, createWebSiteSchema, createSchemaGraph } from "@/lib/seo";
 import "./globals.css";
+
+import { Geist, Geist_Mono } from "next/font/google";
+import { createOrganizationSchema, createSchemaGraph, createWebSiteSchema } from "@/lib/seo";
+
+import { JsonLd } from "@/components/seo/JsonLd";
+import type { Metadata } from "next";
+import { Navbar } from "@/components/layout/Navbar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

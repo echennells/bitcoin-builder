@@ -1,21 +1,4 @@
-import type {
-  Article,
-  BreadcrumbList,
-  Course,
-  Event,
-  HowTo,
-  HowToStep,
-  ItemList,
-  ListItem,
-  Organization,
-  Place,
-  PostalAddress,
-  SearchAction,
-  SoftwareApplication,
-  WebPage,
-  WebSite,
-  WithContext,
-} from "./types/schema-org";
+
 
 /**
  * Structured Data Builders for Schema.org JSON-LD
@@ -24,6 +7,60 @@ import type {
 
 const SITE_NAME = "Builder Vancouver";
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://builder.van";
+
+/**
+ * Input type definitions for schema builders
+ * Use these types when calling schema builder functions for type safety
+ */
+
+/**
+ * Input type for createEventSchema
+ * @example
+ * const eventInput: EventSchemaInput = {
+ *   title: "Lightning Workshop",
+ *   slug: "lightning-workshop",
+ *   description: "Learn about Lightning Network",
+ *   date: "2025-12-15",
+ *   time: "6:00 PM",
+ *   location: "Bitcoin Commons"
+ * };
+ */
+export type EventSchemaInput = Parameters<typeof createEventSchema>[0];
+
+/**
+ * Input type for createArticleSchema
+ */
+export type ArticleSchemaInput = Parameters<typeof createArticleSchema>[0];
+
+/**
+ * Input type for createCourseSchema
+ */
+export type CourseSchemaInput = Parameters<typeof createCourseSchema>[0];
+
+/**
+ * Input type for createHowToSchema
+ */
+export type HowToSchemaInput = Parameters<typeof createHowToSchema>[0];
+
+/**
+ * Input type for createSoftwareApplicationSchema
+ */
+export type SoftwareApplicationSchemaInput = Parameters<typeof createSoftwareApplicationSchema>[0];
+
+/**
+ * Input type for createCollectionPageSchema
+ */
+export type CollectionPageSchemaInput = {
+  url: string;
+  title: string;
+  description: string;
+  items: Array<{ name: string; url: string; description?: string }>;
+};
+
+/**
+ * Input type for createBreadcrumbList
+ */
+export type BreadcrumbListInput = Array<{ name: string; url?: string }>;
 
 /**
  * Creates the Organization schema for Builder Vancouver

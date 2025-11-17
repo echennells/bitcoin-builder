@@ -6,6 +6,7 @@ import Link from "next/link";
 import { PageContainer } from "@/components/layout/PageContainer";
 import { Section } from "@/components/ui/Section";
 import { loadEvents } from "@/lib/content";
+import { urls } from "@/lib/utils/urls";
 
 export const metadata = generatePageMetadata(
   "Events | Builder Vancouver",
@@ -18,18 +19,18 @@ export default function EventsPage() {
 
   // Generate structured data
   const collectionSchema = createCollectionPageSchema(
-    "https://builder.van/events",
+    urls.events.list(),
     "Events | Builder Vancouver",
     "View upcoming Builder Vancouver meetups, workshops, and Bitcoin events.",
     events.map(event => ({
       name: event.title,
-      url: `https://builder.van/events/${event.slug}`,
+      url: urls.events.detail(event.slug),
       description: event.description,
     }))
   );
 
   const breadcrumbSchema = createBreadcrumbList([
-    { name: "Home", url: "https://builder.van" },
+    { name: "Home", url: urls.home() },
     { name: "Events" },
   ]);
 

@@ -1,4 +1,5 @@
 import { loadEvents, loadRecaps } from "@/lib/content";
+import { getSiteUrl, urls } from "@/lib/utils/urls";
 
 import type { MetadataRoute } from "next";
 
@@ -8,7 +9,7 @@ import type { MetadataRoute } from "next";
  */
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://builder.van";
+  const baseUrl = getSiteUrl();
 
   // Load dynamic content
   const { events } = loadEvents();
@@ -17,97 +18,97 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Static pages
   const staticPages = [
     {
-      url: baseUrl,
+      url: urls.home(),
       lastModified: new Date(),
       changeFrequency: "weekly" as const,
       priority: 1.0,
     },
     {
-      url: `${baseUrl}/about`,
+      url: urls.about.overview(),
       lastModified: new Date(),
       changeFrequency: "yearly" as const,
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/about/mission`,
+      url: urls.about.mission(),
       lastModified: new Date(),
       changeFrequency: "yearly" as const,
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/about/vision`,
+      url: urls.about.vision(),
       lastModified: new Date(),
       changeFrequency: "yearly" as const,
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/about/charter`,
+      url: urls.about.charter(),
       lastModified: new Date(),
       changeFrequency: "yearly" as const,
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/about/philosophy`,
+      url: urls.about.philosophy(),
       lastModified: new Date(),
       changeFrequency: "yearly" as const,
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/events`,
+      url: urls.events.list(),
       lastModified: new Date(),
       changeFrequency: "weekly" as const,
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/onboarding`,
+      url: urls.onboarding(),
       lastModified: new Date(),
       changeFrequency: "monthly" as const,
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/what-to-expect`,
+      url: urls.whatToExpect(),
       lastModified: new Date(),
       changeFrequency: "monthly" as const,
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/bitcoin-101`,
+      url: urls.education.bitcoin101(),
       lastModified: new Date(),
       changeFrequency: "monthly" as const,
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/lightning-101`,
+      url: urls.education.lightning101(),
       lastModified: new Date(),
       changeFrequency: "monthly" as const,
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/layer-2-overview`,
+      url: urls.education.layer2(),
       lastModified: new Date(),
       changeFrequency: "monthly" as const,
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/resources`,
-      lastModified: new Date(),
-      changeFrequency: "weekly" as const,
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/recaps`,
+      url: urls.resources(),
       lastModified: new Date(),
       changeFrequency: "weekly" as const,
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/projects`,
+      url: urls.recaps.list(),
+      lastModified: new Date(),
+      changeFrequency: "weekly" as const,
+      priority: 0.7,
+    },
+    {
+      url: urls.projects(),
       lastModified: new Date(),
       changeFrequency: "weekly" as const,
       priority: 0.6,
     },
     {
-      url: `${baseUrl}/vibe-apps`,
+      url: urls.vibeApps(),
       lastModified: new Date(),
       changeFrequency: "weekly" as const,
       priority: 0.6,
@@ -116,7 +117,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // Event pages
   const eventPages = events.map((event) => ({
-    url: `${baseUrl}/events/${event.slug}`,
+    url: urls.events.detail(event.slug),
     lastModified: new Date(event.date),
     changeFrequency: "monthly" as const,
     priority: 0.7,
@@ -124,7 +125,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // Recap pages
   const recapPages = recaps.map((recap) => ({
-    url: `${baseUrl}/recaps/${recap.slug}`,
+    url: urls.recaps.detail(recap.slug),
     lastModified: new Date(recap.date),
     changeFrequency: "yearly" as const,
     priority: 0.6,

@@ -5,6 +5,7 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { loadLayer2 } from "@/lib/content";
 import { generateMetadata as generateMeta, createCourseSchema, createBreadcrumbList, createSchemaGraph } from "@/lib/seo";
 import Link from "next/link";
+import { urls } from "@/lib/utils/urls";
 
 export async function generateMetadata() {
   const content = loadLayer2();
@@ -23,7 +24,7 @@ export default function Layer2OverviewPage() {
   });
 
   const breadcrumbSchema = createBreadcrumbList([
-    { name: "Home", url: "https://builder.van" },
+    { name: "Home", url: urls.home() },
     { name: "Layer 2 Overview" },
   ]);
 

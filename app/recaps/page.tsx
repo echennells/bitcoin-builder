@@ -5,6 +5,7 @@ import { Section } from "@/components/ui/Section";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { loadRecaps } from "@/lib/content";
 import { generatePageMetadata, createCollectionPageSchema, createBreadcrumbList, createSchemaGraph } from "@/lib/seo";
+import { urls } from "@/lib/utils/urls";
 
 export const metadata = generatePageMetadata(
   "Event Recaps | Builder Vancouver",
@@ -17,18 +18,18 @@ export default function RecapsPage() {
 
   // Generate structured data
   const collectionSchema = createCollectionPageSchema(
-    "https://builder.van/recaps",
+    urls.recaps.list(),
     "Event Recaps | Builder Vancouver",
     "Read recaps and highlights from past Builder Vancouver events and workshops.",
     recaps.map(recap => ({
       name: recap.title,
-      url: `https://builder.van/recaps/${recap.slug}`,
+      url: urls.recaps.detail(recap.slug),
       description: recap.summary,
     }))
   );
 
   const breadcrumbSchema = createBreadcrumbList([
-    { name: "Home", url: "https://builder.van" },
+    { name: "Home", url: urls.home() },
     { name: "Recaps" },
   ]);
 

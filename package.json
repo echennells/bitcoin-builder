@@ -3,11 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "npm run validate:content && next dev",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "tsc": "tsc --noEmit"
+    "tsc": "tsc --noEmit",
+    "validate:content": "tsx scripts/validate-content.ts",
+    "content:check": "npm run validate:content && npm run tsc"
   },
   "dependencies": {
     "next": "16.0.3",
@@ -23,6 +25,7 @@
     "eslint": "^9",
     "eslint-config-next": "16.0.3",
     "tailwindcss": "^4",
+    "tsx": "^4.19.2",
     "typescript": "^5"
   }
 }

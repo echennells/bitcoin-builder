@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { buildUrl } from "@/lib/utils/urls";
 
 /**
  * Robots.txt configuration for Builder Vancouver
@@ -6,8 +7,6 @@ import type { MetadataRoute } from "next";
  */
 
 export default function robots(): MetadataRoute.Robots {
-  const baseUrl = "https://builder.van";
-
   return {
     rules: [
       {
@@ -16,7 +15,7 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ["/api/", "/admin/"],
       },
     ],
-    sitemap: `${baseUrl}/sitemap.xml`,
+    sitemap: buildUrl("/sitemap.xml"),
   };
 }
 

@@ -5,6 +5,7 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { loadOnboarding } from "@/lib/content";
 import { generateMetadata as generateMeta, createHowToSchema, createBreadcrumbList, createSchemaGraph } from "@/lib/seo";
 import Link from "next/link";
+import { urls } from "@/lib/utils/urls";
 
 export async function generateMetadata() {
   const content = loadOnboarding();
@@ -26,7 +27,7 @@ export default function OnboardingPage() {
   });
 
   const breadcrumbSchema = createBreadcrumbList([
-    { name: "Home", url: "https://builder.van" },
+    { name: "Home", url: urls.home() },
     { name: "Onboarding" },
   ]);
 

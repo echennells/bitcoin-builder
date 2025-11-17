@@ -1,0 +1,70 @@
+{
+  "$comment": "Example Content File - Educational Content Schema",
+  "$comment": "This shows all available fields and their formats",
+  "$comment": "Copy this structure when creating new educational content",
+  
+  "title": "Example Educational Content",
+  "$comment:title": "Main page title - should be clear and descriptive",
+  
+  "slug": "example-content",
+  "$comment:slug": "URL-safe identifier - use kebab-case, no spaces or special chars",
+  
+  "description": "A comprehensive example showing all available content fields and their proper usage patterns.",
+  "$comment:description": "Brief summary shown on listing pages and in meta tags - aim for 120-160 characters",
+  
+  "sections": [
+    {
+      "$comment": "Section 1: Basic section with just title and body",
+      "title": "Getting Started",
+      "body": "This is the section body. You can use multiple paragraphs by using \\n\\n between them.\\n\\nLike this second paragraph shows."
+    },
+    {
+      "$comment": "Section 2: Section with links",
+      "title": "External Resources",
+      "body": "Check out these helpful resources to learn more.",
+      "links": [
+        {
+          "text": "Bitcoin Whitepaper",
+          "url": "https://bitcoin.org/bitcoin.pdf",
+          "external": true
+        },
+        {
+          "text": "Internal Page Link",
+          "url": "/bitcoin-101",
+          "external": false
+        }
+      ]
+    },
+    {
+      "$comment": "Section 3: Section with images (optional feature)",
+      "title": "Visual Guide",
+      "body": "Images can help explain complex concepts.",
+      "images": [
+        {
+          "src": "/images/example-diagram.png",
+          "alt": "Descriptive alt text for accessibility",
+          "caption": "Optional caption explaining the image"
+        }
+      ]
+    }
+  ],
+  "$comment:sections": "Array of content sections - each needs at least title and body",
+  
+  "meta": {
+    "$comment": "SEO metadata for this page",
+    "title": "Example Educational Content | Builder Vancouver",
+    "$comment:meta.title": "Full SEO title - include site name, keep under 60 chars",
+    
+    "description": "A comprehensive example showing content structure and best practices for Builder Vancouver educational content.",
+    "$comment:meta.description": "SEO description for search results - 120-160 characters",
+    
+    "keywords": [
+      "bitcoin",
+      "education",
+      "example",
+      "vancouver"
+    ],
+    "$comment:meta.keywords": "Optional array of relevant keywords for SEO"
+  }
+}
+

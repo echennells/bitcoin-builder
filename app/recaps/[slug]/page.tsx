@@ -6,6 +6,7 @@ import { Section } from "@/components/ui/Section";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { loadRecap, loadRecaps } from "@/lib/content";
 import { generateMetadata as generateMeta, createArticleSchema, createBreadcrumbList, createSchemaGraph } from "@/lib/seo";
+import { urls } from "@/lib/utils/urls";
 
 interface RecapPageProps {
   params: Promise<{ slug: string }>;
@@ -47,8 +48,8 @@ export default async function RecapPage({ params }: RecapPageProps) {
   });
 
   const breadcrumbSchema = createBreadcrumbList([
-    { name: "Home", url: "https://builder.van" },
-    { name: "Recaps", url: "https://builder.van/recaps" },
+    { name: "Home", url: urls.home() },
+    { name: "Recaps", url: urls.recaps.list() },
     { name: recap.title },
   ]);
 

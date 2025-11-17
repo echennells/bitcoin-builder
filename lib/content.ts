@@ -33,7 +33,9 @@ import {
 
 import { join } from "path";
 import { readFileSync } from "fs";
+import { readFile } from "fs/promises";
 import { z } from "zod";
+import { createContentError, formatContentError } from "./errors";
 
 /**
  * Type-safe content loader with Zod validation
@@ -44,6 +46,15 @@ const CONTENT_DIR = join(process.cwd(), "content");
 
 /**
  * Generic content loader with Zod validation
+ * Reads JSON files from the content directory and validates against provided schema
+ *
+ * @param filename - Name of the JSON file in the content directory (e.g., "events.json")
+ * @param schema - Zod schema to validate against
+ * @returns Validated and typed content
+ * @throws {Error} If file not found, invalid JSON, or validation fails
+ *
+ * @example
+ * const events = loadContent("events.json", EventsCollectionSchema);
  */
 function loadContent<T>(filename: string, schema: z.ZodSchema<T>): T {
   try {
@@ -52,96 +63,210 @@ function loadContent<T>(filename: string, schema: z.ZodSchema<T>): T {
     const parsed = JSON.parse(fileContent);
     return schema.parse(parsed);
   } catch (error) {
-    if (error instanceof z.ZodError) {
-      console.error(`Validation error in ${filename}:`, error.errors);
-      throw new Error(`Invalid content structure in ${filename}`);
-    }
-    if ((error as NodeJS.ErrnoException).code === "ENOENT") {
-      throw new Error(`Content file not found: ${filename}`);
-    }
-    throw error;
+    const contentError = createContentError(filename, error);
+    console.error(formatContentError(contentError));
+    throw contentError;
   }
 }
 
 /**
  * Async version of content loader (for use in Server Components)
+ * Uses actual async file I/O for non-blocking reads
+ *
+ * @param filename - Name of the JSON file in the content directory
+ * @param schema - Zod schema for validation
+ * @returns Validated content
+ * @throws {Error} If file not found, parse error, or validation fails
+ *
+ * @example
+ * // In a Server Component
+ * const events = await loadContentAsync("events.json", EventsCollectionSchema);
  */
 export async function loadContentAsync<T>(
   filename: string,
   schema: z.ZodSchema<T>
 ): Promise<T> {
-  return loadContent(filename, schema);
+  try {
+    const filePath = join(CONTENT_DIR, filename);
+    const fileContent = await readFile(filePath, "utf-8");
+    const parsed = JSON.parse(fileContent);
+    return schema.parse(parsed);
+  } catch (error) {
+    const contentError = createContentError(filename, error);
+    console.error(formatContentError(contentError));
+    throw contentError;
+  }
 }
 
 // Specific content loaders
 
+/**
+ * Loads homepage content including hero section and main content
+ * @returns Home page content
+ * @throws {Error} If home.json is invalid or missing
+ */
 export function loadHome(): Home {
   return loadContent("home.json", HomeSchema);
 }
 
+/**
+ * Loads all upcoming events
+ * @returns Collection of events with metadata
+ * @throws {Error} If events.json is invalid or missing
+ */
 export function loadEvents(): EventsCollection {
   return loadContent("events.json", EventsCollectionSchema);
 }
 
+/**
+ * Loads a single event by its slug identifier
+ * @param slug - URL-safe event identifier (e.g., "lightning-workshop-2025")
+ * @returns Event object if found, undefined otherwise
+ * @throws {Error} If events.json cannot be loaded
+ *
+ * @example
+ * const event = loadEvent('lightning-workshop');
+ * if (event) {
+ *   console.log(event.title, event.date);
+ * }
+ */
 export function loadEvent(slug: string): Event | undefined {
   const events = loadEvents();
   return events.events.find((event) => event.slug === slug);
 }
 
+/**
+ * Loads onboarding guide content for new members
+ * @returns Onboarding content with steps and information
+ * @throws {Error} If onboarding.json is invalid or missing
+ */
 export function loadOnboarding(): Onboarding {
   return loadContent("onboarding.json", OnboardingSchema);
 }
 
+/**
+ * Loads Bitcoin fundamentals educational content
+ * @returns Bitcoin 101 course content
+ * @throws {Error} If bitcoin101.json is invalid or missing
+ */
 export function loadBitcoin101(): EducationalContent {
   return loadContent("bitcoin101.json", EducationalContentSchema);
 }
 
+/**
+ * Loads Lightning Network educational content
+ * @returns Lightning 101 course content
+ * @throws {Error} If lightning101.json is invalid or missing
+ */
 export function loadLightning101(): EducationalContent {
   return loadContent("lightning101.json", EducationalContentSchema);
 }
 
+/**
+ * Loads Layer 2 scaling solutions overview content
+ * @returns Layer 2 educational content
+ * @throws {Error} If layer2.json is invalid or missing
+ */
 export function loadLayer2(): EducationalContent {
   return loadContent("layer2.json", EducationalContentSchema);
 }
 
+/**
+ * Loads curated learning resources and tools
+ * @returns Collection of categorized resources
+ * @throws {Error} If resources.json is invalid or missing
+ */
 export function loadResources(): ResourcesCollection {
   return loadContent("resources.json", ResourcesCollectionSchema);
 }
 
+/**
+ * Loads all past event recaps
+ * @returns Collection of event recap articles
+ * @throws {Error} If recaps.json is invalid or missing
+ */
 export function loadRecaps(): RecapsCollection {
   return loadContent("recaps.json", RecapsCollectionSchema);
 }
 
+/**
+ * Loads a single event recap by its slug identifier
+ * @param slug - URL-safe recap identifier
+ * @returns Recap object if found, undefined otherwise
+ * @throws {Error} If recaps.json cannot be loaded
+ *
+ * @example
+ * const recap = loadRecap('october-2025-meetup');
+ * if (recap) {
+ *   console.log(recap.title, recap.summary);
+ * }
+ */
 export function loadRecap(slug: string): Recap | undefined {
   const recaps = loadRecaps();
   return recaps.recaps.find((recap) => recap.slug === slug);
 }
 
+/**
+ * Loads community projects and initiatives
+ * @returns Collection of projects with status and links
+ * @throws {Error} If projects.json is invalid or missing
+ */
 export function loadProjects(): ProjectsCollection {
   return loadContent("projects.json", ProjectsCollectionSchema);
 }
 
+/**
+ * Loads Bitcoin applications showcase
+ * @returns Collection of featured Bitcoin apps
+ * @throws {Error} If vibeapps.json is invalid or missing
+ */
 export function loadVibeApps(): VibeAppsCollection {
   return loadContent("vibeapps.json", VibeAppsCollectionSchema);
 }
 
+/**
+ * Loads "What to Expect" guide for event attendees
+ * @returns Event expectations and guidelines
+ * @throws {Error} If what-to-expect.json is invalid or missing
+ */
 export function loadWhatToExpect(): WhatToExpect {
   return loadContent("what-to-expect.json", WhatToExpectSchema);
 }
 
 // Foundation content loaders
+
+/**
+ * Loads organization mission statement
+ * @returns Mission content with paragraphs and version
+ * @throws {Error} If mission.json is invalid or missing
+ */
 export function loadMission(): Mission {
   return loadContent("mission.json", MissionSchema);
 }
 
+/**
+ * Loads organization vision and goals
+ * @returns Vision content with statements and version
+ * @throws {Error} If vision.json is invalid or missing
+ */
 export function loadVision(): Vision {
   return loadContent("vision.json", VisionSchema);
 }
 
+/**
+ * Loads community charter and principles
+ * @returns Charter content with pillars and principles
+ * @throws {Error} If charter.json is invalid or missing
+ */
 export function loadCharter(): Charter {
   return loadContent("charter.json", CharterSchema);
 }
 
+/**
+ * Loads community philosophy and themes
+ * @returns Philosophy content with themes and details
+ * @throws {Error} If philosophy.json is invalid or missing
+ */
 export function loadPhilosophy(): Philosophy {
   return loadContent("philosophy.json", PhilosophySchema);
 }
