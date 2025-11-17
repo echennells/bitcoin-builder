@@ -1,24 +1,25 @@
 import { z } from "zod";
+
 import {
-    EventSchema,
-    EventsCollectionSchema,
-    OnboardingSchema,
-    EducationalContentSchema,
-    ResourceSchema,
-    ResourcesCollectionSchema,
-    RecapSchema,
-    RecapsCollectionSchema,
-    ProjectSchema,
-    ProjectsCollectionSchema,
-    VibeAppSchema,
-    VibeAppsCollectionSchema,
-    WhatToExpectSchema,
-    HomeSchema,
-    SectionSchema,
-    MissionSchema,
-    VisionSchema,
-    CharterSchema,
-    PhilosophySchema,
+  CharterSchema,
+  EducationalContentSchema,
+  EventSchema,
+  EventsCollectionSchema,
+  HomeSchema,
+  MissionSchema,
+  OnboardingSchema,
+  PhilosophySchema,
+  ProjectSchema,
+  ProjectsCollectionSchema,
+  RecapSchema,
+  RecapsCollectionSchema,
+  ResourceSchema,
+  ResourcesCollectionSchema,
+  SectionSchema,
+  VibeAppSchema,
+  VibeAppsCollectionSchema,
+  VisionSchema,
+  WhatToExpectSchema,
 } from "./schemas";
 
 /**
@@ -59,8 +60,7 @@ export type Philosophy = z.infer<typeof PhilosophySchema>;
 export type Section = z.infer<typeof SectionSchema>;
 
 export type Meta = {
-    title: string;
-    description: string;
-    keywords?: string[];
+  title: string;
+  description: string;
+  keywords?: string[];
 };
-

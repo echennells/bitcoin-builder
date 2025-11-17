@@ -31,7 +31,13 @@
   "meta": {
     "title": "Builder Vancouver | Bitcoin Meetups & Education",
     "description": "Join Builder Vancouver for Bitcoin meetups, Lightning Network education, and Layer 2 exploration. Connect with the local Bitcoin community.",
-    "keywords": ["bitcoin", "vancouver", "meetup", "lightning network", "layer 2", "bitcoin education"]
+    "keywords": [
+      "bitcoin",
+      "vancouver",
+      "meetup",
+      "lightning network",
+      "layer 2",
+      "bitcoin education"
+    ]
   }
 }
-

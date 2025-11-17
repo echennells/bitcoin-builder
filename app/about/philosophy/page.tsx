@@ -1,13 +1,25 @@
+import type { Metadata } from "next";
+
 import { PageContainer } from "@/components/layout/PageContainer";
 import { Heading } from "@/components/ui/Heading";
 import { Section } from "@/components/ui/Section";
+
 import { loadPhilosophy } from "@/lib/content";
-import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Builder Philosophy",
-  description: "Our approach to education, design, AI, and community-driven progress in the Bitcoin ecosystem.",
-  keywords: ["builder", "philosophy", "education", "design", "ux", "ai", "community", "bitcoin"],
+  description:
+    "Our approach to education, design, AI, and community-driven progress in the Bitcoin ecosystem.",
+  keywords: [
+    "builder",
+    "philosophy",
+    "education",
+    "design",
+    "ux",
+    "ai",
+    "community",
+    "bitcoin",
+  ],
 };
 
 export default function PhilosophyPage() {
@@ -26,7 +38,9 @@ export default function PhilosophyPage() {
 
       <Section>
         <p className="text-xl text-neutral-300 mb-12 leading-relaxed">
-          Our philosophy shapes how we think about building, teaching, and collaborating. These themes influence every aspect of Builder's approach.
+          Our philosophy shapes how we think about building, teaching, and
+          collaborating. These themes influence every aspect of Builder&apos;s
+          approach.
         </p>
 
         <div className="space-y-8">
@@ -66,7 +80,9 @@ export default function PhilosophyPage() {
               Structured Content
             </h3>
             <p className="text-neutral-300 leading-relaxed">
-              All Builder content is stored in structured JSON format, making it consumable by both humans and AI. This enables remixing, reuse, and programmatic content generation.
+              All Builder content is stored in structured JSON format, making it
+              consumable by both humans and AI. This enables remixing, reuse,
+              and programmatic content generation.
             </p>
           </div>
           <div className="p-6 bg-neutral-900 border border-neutral-800 rounded-xl">
@@ -74,7 +90,9 @@ export default function PhilosophyPage() {
               Progressive Learning
             </h3>
             <p className="text-neutral-300 leading-relaxed">
-              We start with 101-level content and build toward mastery. Each piece of educational material connects to the next, creating clear learning paths.
+              We start with 101-level content and build toward mastery. Each
+              piece of educational material connects to the next, creating clear
+              learning paths.
             </p>
           </div>
           <div className="p-6 bg-neutral-900 border border-neutral-800 rounded-xl">
@@ -82,7 +100,8 @@ export default function PhilosophyPage() {
               Community-First Development
             </h3>
             <p className="text-neutral-300 leading-relaxed">
-              Every tool we build, every event we host, and every resource we create is shaped by community feedback and real builder needs.
+              Every tool we build, every event we host, and every resource we
+              create is shaped by community feedback and real builder needs.
             </p>
           </div>
         </div>
@@ -90,4 +109,3 @@ export default function PhilosophyPage() {
     </PageContainer>
   );
 }
-

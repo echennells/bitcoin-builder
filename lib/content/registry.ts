@@ -3,45 +3,44 @@
  * Central mapping of content files to their schemas and loaders
  * Provides programmatic access to all content types for tooling and validation
  */
-
 import { z } from "zod";
+
 import {
-  EventsCollectionSchema,
-  OnboardingSchema,
+  CharterSchema,
   EducationalContentSchema,
-  ResourcesCollectionSchema,
-  RecapsCollectionSchema,
-  ProjectsCollectionSchema,
-  VibeAppsCollectionSchema,
-  WhatToExpectSchema,
+  EventsCollectionSchema,
   HomeSchema,
   MissionSchema,
-  VisionSchema,
-  CharterSchema,
+  OnboardingSchema,
   PhilosophySchema,
+  ProjectsCollectionSchema,
+  RecapsCollectionSchema,
+  ResourcesCollectionSchema,
+  VibeAppsCollectionSchema,
+  VisionSchema,
+  WhatToExpectSchema,
 } from "../schemas";
-
 import type {
-  EventsCollection,
-  Onboarding,
+  Charter,
   EducationalContent,
-  ResourcesCollection,
-  RecapsCollection,
-  ProjectsCollection,
-  VibeAppsCollection,
-  WhatToExpect,
+  EventsCollection,
   Home,
   Mission,
-  Vision,
-  Charter,
+  Onboarding,
   Philosophy,
+  ProjectsCollection,
+  RecapsCollection,
+  ResourcesCollection,
+  VibeAppsCollection,
+  Vision,
+  WhatToExpect,
 } from "../types";
 
 /**
  * Content entry definition
  * Maps a content file to its schema, type, and description
  */
-export interface ContentEntry<T = any> {
+export interface ContentEntry<T = unknown> {
   /** Filename in the content directory */
   filename: string;
   /** Zod schema for validation */
@@ -211,8 +210,7 @@ export function getAllContentFilenames(): string[] {
  */
 export function getSchemaForFilename(
   filename: string
-): z.ZodSchema<any> | undefined {
+): z.ZodSchema<unknown> | undefined {
   const entry = getAllContentEntries().find((e) => e.filename === filename);
   return entry?.schema;
 }
-

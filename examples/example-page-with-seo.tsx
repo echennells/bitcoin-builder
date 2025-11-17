@@ -1,33 +1,34 @@
 /**
  * Example: Complete Page Component with SEO
- * 
+ *
  * This example demonstrates a complete page implementation with:
  * - Next.js metadata generation
  * - Schema.org structured data (JSON-LD)
  * - Breadcrumb navigation
  * - Type-safe content loading
  * - URL builder usage
- * 
+ *
  * Copy this pattern when creating new pages.
  */
+import Link from "next/link";
 
 import { PageContainer } from "@/components/layout/PageContainer";
+import { JsonLd } from "@/components/seo/JsonLd";
 import { Heading } from "@/components/ui/Heading";
 import { Section } from "@/components/ui/Section";
-import { JsonLd } from "@/components/seo/JsonLd";
+
 import { loadBitcoin101 } from "@/lib/content";
 import {
-  generateMetadata as generateMeta,
-  createCourseSchema,
   createBreadcrumbList,
+  createCourseSchema,
   createSchemaGraph,
+  generateMetadata as generateMeta,
 } from "@/lib/seo";
 import { urls } from "@/lib/utils/urls";
-import Link from "next/link";
 
 /**
  * Step 1: Generate Metadata
- * 
+ *
  * Next.js will call this function to generate page metadata.
  * Use the content's meta object for consistency.
  */
@@ -38,7 +39,7 @@ export async function generateMetadata() {
 
 /**
  * Step 2: Main Component
- * 
+ *
  * - Load content using type-safe loaders
  * - Generate structured data (JSON-LD)
  * - Render content with semantic HTML
@@ -124,7 +125,7 @@ export default function ExamplePage() {
 
 /**
  * Key Patterns to Follow:
- * 
+ *
  * 1. **Always use named exports** (not default exports for components)
  * 2. **Use type-safe content loaders** from @/lib/content
  * 3. **Use URL builders** from @/lib/utils/urls (never hardcode URLs)
@@ -133,9 +134,9 @@ export default function ExamplePage() {
  * 6. **Use semantic HTML** (H1 for page title, H2 for sections, etc.)
  * 7. **Apply consistent styling** using Tailwind utilities
  * 8. **Handle optional content** (links, images) with conditional rendering
- * 
+ *
  * Common Pitfalls to Avoid:
- * 
+ *
  * - ❌ Hardcoding URLs: Use `urls.events.list()` instead of "/events"
  * - ❌ Missing metadata: Every page needs generateMetadata()
  * - ❌ No structured data: Always include relevant JSON-LD schemas
@@ -143,4 +144,3 @@ export default function ExamplePage() {
  * - ❌ Inline styles: Use Tailwind classes instead
  * - ❌ Default exports: Use named exports for better refactoring
  */
-

@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+
 import { buildUrl } from "@/lib/utils/urls";
 
 /**
@@ -18,4 +19,3 @@ export default function robots(): MetadataRoute.Robots {
     sitemap: buildUrl("/sitemap.xml"),
   };
 }
-

@@ -1,13 +1,23 @@
+import type { Metadata } from "next";
+
 import { PageContainer } from "@/components/layout/PageContainer";
 import { Heading } from "@/components/ui/Heading";
 import { Section } from "@/components/ui/Section";
+
 import { loadMission } from "@/lib/content";
-import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Builder Mission Statement",
-  description: "Accelerate the creation of Bitcoin products by fostering an open, neutral, sovereign, and collaborative builder ecosystem.",
-  keywords: ["builder", "mission", "bitcoin", "products", "collaboration", "sovereignty"],
+  description:
+    "Accelerate the creation of Bitcoin products by fostering an open, neutral, sovereign, and collaborative builder ecosystem.",
+  keywords: [
+    "builder",
+    "mission",
+    "bitcoin",
+    "products",
+    "collaboration",
+    "sovereignty",
+  ],
 };
 
 export default function MissionPage() {
@@ -45,13 +55,16 @@ export default function MissionPage() {
           What This Means
         </Heading>
         <p className="text-lg text-neutral-300 leading-relaxed mb-4">
-          Our mission drives every decision we make. From the workshops we host to the tools we build, everything serves one purpose: helping people create real Bitcoin products.
+          Our mission drives every decision we make. From the workshops we host
+          to the tools we build, everything serves one purpose: helping people
+          create real Bitcoin products.
         </p>
         <p className="text-lg text-neutral-300 leading-relaxed">
-          We focus on practical skills, structured documentation, and open collaboration—because better tools and better knowledge lead to better sovereignty.
+          We focus on practical skills, structured documentation, and open
+          collaboration—because better tools and better knowledge lead to better
+          sovereignty.
         </p>
       </Section>
     </PageContainer>
   );
 }
-

@@ -1,6 +1,6 @@
 /**
  * Example: Dynamic Route with [slug] Parameter
- * 
+ *
  * This example demonstrates:
  * - Dynamic route handling with Next.js App Router
  * - Type-safe params handling (must await params!)
@@ -8,24 +8,25 @@
  * - Static path generation for SSG
  * - Dynamic metadata generation
  * - Structured data for dynamic content
- * 
+ *
  * File location: app/example/[slug]/page.tsx
  */
-
-import { notFound } from "next/navigation";
 import Link from "next/link";
+import { notFound } from "next/navigation";
+
 import { PageContainer } from "@/components/layout/PageContainer";
+import { JsonLd } from "@/components/seo/JsonLd";
 import { Heading } from "@/components/ui/Heading";
 import { Section } from "@/components/ui/Section";
-import { JsonLd } from "@/components/seo/JsonLd";
+
 import { loadEvent, loadEvents } from "@/lib/content";
 import {
-  generateMetadata as generateMeta,
-  createEventSchema,
   createBreadcrumbList,
+  createEventSchema,
   createSchemaGraph,
+  generateMetadata as generateMeta,
 } from "@/lib/seo";
-import { urls, paths } from "@/lib/utils/urls";
+import { paths, urls } from "@/lib/utils/urls";
 
 /**
  * Props interface for the page
@@ -37,7 +38,7 @@ interface EventPageProps {
 
 /**
  * Step 1: Generate Metadata Dynamically
- * 
+ *
  * Next.js calls this for each page to generate metadata.
  * Load the content by slug and return appropriate metadata.
  */
@@ -45,10 +46,10 @@ export async function generateMetadata({ params }: EventPageProps) {
   // CRITICAL: Always await params!
   // See: https://nextjs.org/docs/messages/sync-dynamic-apis
   const { slug } = await params;
-  
+
   // Load the specific content item
   const event = loadEvent(slug);
-  
+
   // Handle not found case
   if (!event) {
     return {
@@ -63,13 +64,13 @@ export async function generateMetadata({ params }: EventPageProps) {
 
 /**
  * Step 2: Generate Static Paths (for SSG)
- * 
+ *
  * Tells Next.js which pages to pre-render at build time.
  * Returns an array of param objects.
  */
 export async function generateStaticParams() {
   const { events } = loadEvents();
-  
+
   return events.map((event) => ({
     slug: event.slug,
   }));
@@ -77,13 +78,13 @@ export async function generateStaticParams() {
 
 /**
  * Step 3: Main Page Component
- * 
+ *
  * Renders the dynamic page content.
  */
 export default async function EventPage({ params }: EventPageProps) {
   // CRITICAL: Always await params!
   const { slug } = await params;
-  
+
   // Load the specific content
   const event = loadEvent(slug);
 
@@ -176,7 +177,7 @@ export default async function EventPage({ params }: EventPageProps) {
 
 /**
  * Key Patterns for Dynamic Routes:
- * 
+ *
  * 1. **Always await params** - They're a Promise in Next.js 15+
  * 2. **Type params correctly** - Use Promise<{ slug: string }>
  * 3. **Handle 404s** - Use notFound() when content doesn't exist
@@ -184,19 +185,18 @@ export default async function EventPage({ params }: EventPageProps) {
  * 5. **Dynamic metadata** - Load content in generateMetadata()
  * 6. **Breadcrumbs** - Include parent pages in breadcrumb schema
  * 7. **Back links** - Provide navigation to parent collection
- * 
+ *
  * URL Patterns:
- * 
+ *
  * - Use `paths` helper for Next.js Link href (e.g., paths.events.list())
  * - Use `urls` helper for structured data (e.g., urls.events.detail(slug))
  * - Never hardcode URLs or paths
- * 
+ *
  * Common Mistakes:
- * 
+ *
  * - ❌ Not awaiting params (causes runtime errors)
  * - ❌ Forgetting notFound() (shows empty page instead of 404)
  * - ❌ Missing generateStaticParams() (page won't pre-render)
  * - ❌ Hardcoding parent URLs in breadcrumbs
  * - ❌ Not handling loading states properly
  */
-

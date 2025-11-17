@@ -23,6 +23,7 @@ The site uses a JSON-based content management system with runtime validation:
 - **Content Loaders**: Type-safe functions to load and validate content
 
 Example content flow:
+
 ```
 content/events.json → Zod Schema Validation → TypeScript Types → React Components
 ```
@@ -89,6 +90,7 @@ pnpm dev
 ```
 
 The development server includes:
+
 - Hot module replacement
 - Fast refresh for instant updates
 - Type checking in your IDE
@@ -106,12 +108,29 @@ pnpm build
 pnpm start
 ```
 
-### Linting
+### Code Quality
 
 ```bash
+# Format code with Prettier
+pnpm format
+
+# Check formatting without changes
+pnpm format:check
+
 # Run ESLint
 pnpm lint
+
+# Fix ESLint issues automatically
+pnpm lint:fix
+
+# Validate content files
+pnpm validate:content
+
+# Run all checks (validation + type checking)
+pnpm content:check
 ```
+
+**Pre-commit Hooks**: The project uses Husky and lint-staged to automatically format, lint, and validate code before commits. See [Formatting & Linting Guide](docs/FORMATTING-LINTING.md) for details.
 
 ## Content Authoring
 
@@ -149,6 +168,7 @@ pnpm lint
 All content is validated against Zod schemas at runtime. If content doesn't match the schema, you'll see detailed validation errors in the console during development.
 
 **Schema Validation Ensures:**
+
 - Required fields are present
 - Data types are correct
 - URLs are properly formatted
@@ -174,11 +194,10 @@ Each content type has its own schema and validation rules defined in `/lib/schem
 Every page generates comprehensive metadata using Next.js Metadata API:
 
 ```typescript
-export const metadata = generatePageMetadata(
-  "Page Title",
-  "Page description",
-  ["keyword1", "keyword2"]
-);
+export const metadata = generatePageMetadata("Page Title", "Page description", [
+  "keyword1",
+  "keyword2",
+]);
 ```
 
 ### Structured Data (JSON-LD)
@@ -194,6 +213,7 @@ return <JsonLd data={eventSchema} />;
 ```
 
 **Available Schema Builders:**
+
 - `createOrganizationSchema()` - Organization info
 - `createWebSiteSchema()` - Website metadata
 - `createEventSchema()` - Events
@@ -294,6 +314,7 @@ refactor: Reorganize content loaders
 ### Content Validation Errors
 
 If you see validation errors:
+
 1. Check the error message for specific field issues
 2. Refer to the schema in `/lib/schemas.ts`
 3. Ensure all required fields are present
@@ -302,6 +323,7 @@ If you see validation errors:
 ### Build Errors
 
 If build fails:
+
 1. Run `pnpm tsc` to check for type errors
 2. Clear Next.js cache: `rm -rf .next`
 3. Reinstall dependencies: `rm -rf node_modules && pnpm install`
@@ -309,6 +331,7 @@ If build fails:
 ### Import Errors
 
 All imports use path aliases:
+
 - `@/lib/*` - Library utilities
 - `@/components/*` - React components
 - `@/app/*` - App routes
@@ -335,11 +358,13 @@ NEXT_PUBLIC_SITE_URL=https://builder.van
 ## Resources
 
 ### Next.js Documentation
+
 - [Next.js App Router](https://nextjs.org/docs/app)
 - [Server Components](https://nextjs.org/docs/app/building-your-application/rendering/server-components)
 - [Metadata API](https://nextjs.org/docs/app/building-your-application/optimizing/metadata)
 
 ### Related Technologies
+
 - [Zod Documentation](https://zod.dev)
 - [Tailwind CSS](https://tailwindcss.com)
 - [Schema.org](https://schema.org)
@@ -351,6 +376,7 @@ NEXT_PUBLIC_SITE_URL=https://builder.van
 ## Contact
 
 Builder Vancouver
+
 - Website: https://builder.van
 - [Add social media links]
 

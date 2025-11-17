@@ -1,11 +1,17 @@
-import { createBreadcrumbList, createCollectionPageSchema, createSchemaGraph, generatePageMetadata } from "@/lib/seo";
-
-import { Heading } from "@/components/ui/Heading";
-import { JsonLd } from "@/components/seo/JsonLd";
 import Link from "next/link";
+
 import { PageContainer } from "@/components/layout/PageContainer";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { Heading } from "@/components/ui/Heading";
 import { Section } from "@/components/ui/Section";
+
 import { loadEvents } from "@/lib/content";
+import {
+  createBreadcrumbList,
+  createCollectionPageSchema,
+  createSchemaGraph,
+  generatePageMetadata,
+} from "@/lib/seo";
 import { urls } from "@/lib/utils/urls";
 
 export const metadata = generatePageMetadata(
@@ -22,7 +28,7 @@ export default function EventsPage() {
     urls.events.list(),
     "Events | Builder Vancouver",
     "View upcoming Builder Vancouver meetups, workshops, and Bitcoin events.",
-    events.map(event => ({
+    events.map((event) => ({
       name: event.title,
       url: urls.events.detail(event.slug),
       description: event.description,
@@ -52,7 +58,10 @@ export default function EventsPage() {
             <Section key={event.slug}>
               <article className="bg-neutral-900 border border-neutral-800 rounded-xl p-6 hover:border-orange-400 transition-colors">
                 <Link href={`/events/${event.slug}`}>
-                  <Heading level="h2" className="text-neutral-100 mb-2 hover:text-orange-400 transition-colors">
+                  <Heading
+                    level="h2"
+                    className="text-neutral-100 mb-2 hover:text-orange-400 transition-colors"
+                  >
                     {event.title}
                   </Heading>
                 </Link>
@@ -84,4 +93,3 @@ export default function EventsPage() {
     </>
   );
 }
-

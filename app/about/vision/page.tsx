@@ -1,13 +1,23 @@
+import type { Metadata } from "next";
+
 import { PageContainer } from "@/components/layout/PageContainer";
 import { Heading } from "@/components/ui/Heading";
 import { Section } from "@/components/ui/Section";
+
 import { loadVision } from "@/lib/content";
-import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Builder Vision",
-  description: "A world where Bitcoin builders have the tools, knowledge, and community to create the next generation of open financial products.",
-  keywords: ["builder", "vision", "bitcoin", "future", "community", "education"],
+  description:
+    "A world where Bitcoin builders have the tools, knowledge, and community to create the next generation of open financial products.",
+  keywords: [
+    "builder",
+    "vision",
+    "bitcoin",
+    "future",
+    "community",
+    "education",
+  ],
 };
 
 export default function VisionPage() {
@@ -32,7 +42,7 @@ export default function VisionPage() {
         </div>
 
         <Heading level="h2" className="text-neutral-100 mb-6">
-          The Future We're Building
+          The Future We&apos;re Building
         </Heading>
         <div className="space-y-4">
           {vision.statements.map((statement, index) => (
@@ -56,13 +66,15 @@ export default function VisionPage() {
           Making It Real
         </Heading>
         <p className="text-lg text-neutral-300 leading-relaxed mb-4">
-          This vision guides our long-term strategy. Every Builder chapter, every educational resource, and every tool we create moves us closer to this future.
+          This vision guides our long-term strategy. Every Builder chapter,
+          every educational resource, and every tool we create moves us closer
+          to this future.
         </p>
         <p className="text-lg text-neutral-300 leading-relaxed">
-          We measure success not just by what we build, but by how many people we empower to build alongside us.
+          We measure success not just by what we build, but by how many people
+          we empower to build alongside us.
         </p>
       </Section>
     </PageContainer>
   );
 }
-

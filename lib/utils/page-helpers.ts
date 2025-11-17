@@ -2,16 +2,16 @@
  * Page Helper Utilities
  * Reduce boilerplate in page components with reusable patterns
  */
-
 import type { Metadata } from "next";
+
 import {
-  generateMetadata as generateMeta,
   createBreadcrumbList,
   createCollectionPageSchema,
   createSchemaGraph,
+  generateMetadata as generateMeta,
 } from "../seo";
-import { urls } from "./urls";
 import { BreadcrumbListInput } from "../structured-data";
+import { urls } from "./urls";
 
 /**
  * Configuration for creating a standard collection page
@@ -247,4 +247,3 @@ export function mapCollectionItems<T>(
 ): Array<{ name: string; url: string; description?: string }> {
   return collection.map(mapper);
 }
-

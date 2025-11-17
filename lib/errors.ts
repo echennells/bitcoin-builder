@@ -2,7 +2,6 @@
  * Structured Error System
  * Type-safe error classes with actionable error messages and suggestions
  */
-
 import { z } from "zod";
 
 /**
@@ -69,7 +68,9 @@ export class ContentValidationError extends ContentError {
       ContentErrorCode.VALIDATION_ERROR,
       filename,
       `Validation error in ${filename}:\n${errorDetails}`,
-      suggestions.length > 0 ? suggestions : ContentValidationError.generateSuggestions(zodError)
+      suggestions.length > 0
+        ? suggestions
+        : ContentValidationError.generateSuggestions(zodError)
     );
     this.name = "ContentValidationError";
   }
@@ -94,7 +95,8 @@ export class ContentValidationError extends ContentError {
           break;
 
         case "invalid_string":
-          suggestion = "Ensure all string values are properly formatted and escaped";
+          suggestion =
+            "Ensure all string values are properly formatted and escaped";
           break;
 
         case "invalid_date":
@@ -118,11 +120,13 @@ export class ContentValidationError extends ContentError {
           break;
 
         case "invalid_union":
-          suggestion = "Value doesn't match any of the allowed formats - check the schema";
+          suggestion =
+            "Value doesn't match any of the allowed formats - check the schema";
           break;
 
         case "unrecognized_keys":
-          suggestion = "Remove unexpected fields or check for typos in field names";
+          suggestion =
+            "Remove unexpected fields or check for typos in field names";
           break;
 
         case "invalid_literal":
@@ -228,4 +232,3 @@ export function formatContentError(error: ContentError): string {
 
   return lines.join("\n");
 }
-

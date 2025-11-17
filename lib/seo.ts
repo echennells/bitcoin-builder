@@ -1,5 +1,6 @@
-import type { Meta } from "./types";
 import type { Metadata } from "next";
+
+import type { Meta } from "./types";
 
 /**
  * SEO Utilities for Next.js Metadata API
@@ -88,8 +89,7 @@ export function generateHomeMetadata(): Metadata {
     ],
     openGraph: {
       title: "Builder Vancouver",
-      description:
-        "Bitcoin meetups, education, and community in Vancouver",
+      description: "Bitcoin meetups, education, and community in Vancouver",
       siteName: SITE_NAME,
       type: "website",
       images: [
@@ -104,8 +104,7 @@ export function generateHomeMetadata(): Metadata {
     twitter: {
       card: "summary_large_image",
       title: "Builder Vancouver",
-      description:
-        "Bitcoin meetups, education, and community in Vancouver",
+      description: "Bitcoin meetups, education, and community in Vancouver",
       images: [DEFAULT_IMAGE],
     },
   };
@@ -159,4 +158,3 @@ export function getSiteUrl(path: string = ""): string {
 export function getSiteName(): string {
   return SITE_NAME;
 }
-

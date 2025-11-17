@@ -1,7 +1,9 @@
 import Link from "next/link";
+
 import { PageContainer } from "@/components/layout/PageContainer";
 import { Heading } from "@/components/ui/Heading";
 import { Section } from "@/components/ui/Section";
+
 import { loadHome } from "@/lib/content";
 import { generateHomeMetadata } from "@/lib/seo";
 

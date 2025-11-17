@@ -1,3 +1,24 @@
+import { readFileSync } from "fs";
+import { readFile } from "fs/promises";
+import { join } from "path";
+import { z } from "zod";
+
+import { createContentError, formatContentError } from "./errors";
+import {
+  CharterSchema,
+  EducationalContentSchema,
+  EventsCollectionSchema,
+  HomeSchema,
+  MissionSchema,
+  OnboardingSchema,
+  PhilosophySchema,
+  ProjectsCollectionSchema,
+  RecapsCollectionSchema,
+  ResourcesCollectionSchema,
+  VibeAppsCollectionSchema,
+  VisionSchema,
+  WhatToExpectSchema,
+} from "./schemas";
 import type {
   Charter,
   EducationalContent,
@@ -15,27 +36,6 @@ import type {
   Vision,
   WhatToExpect,
 } from "./types";
-import {
-  CharterSchema,
-  EducationalContentSchema,
-  EventsCollectionSchema,
-  HomeSchema,
-  MissionSchema,
-  OnboardingSchema,
-  PhilosophySchema,
-  ProjectsCollectionSchema,
-  RecapsCollectionSchema,
-  ResourcesCollectionSchema,
-  VibeAppsCollectionSchema,
-  VisionSchema,
-  WhatToExpectSchema,
-} from "./schemas";
-
-import { join } from "path";
-import { readFileSync } from "fs";
-import { readFile } from "fs/promises";
-import { z } from "zod";
-import { createContentError, formatContentError } from "./errors";
 
 /**
  * Type-safe content loader with Zod validation
@@ -301,4 +301,3 @@ export const loadCharterAsync = () =>
   loadContentAsync("charter.json", CharterSchema);
 export const loadPhilosophyAsync = () =>
   loadContentAsync("philosophy.json", PhilosophySchema);
-

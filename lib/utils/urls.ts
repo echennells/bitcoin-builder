@@ -1,7 +1,7 @@
 /**
  * Centralized URL Builder Utilities
  * Type-safe URL generation for all routes in the application
- * 
+ *
  * @example
  * import { urls } from '@/lib/utils/urls';
  * const eventUrl = urls.events.detail('lightning-workshop');
@@ -22,7 +22,7 @@ export function getSiteUrl(): string {
  * Build a full URL from a path
  * @param path - Path to append to site URL (should start with /)
  * @returns Full URL
- * 
+ *
  * @example
  * buildUrl('/events') // "https://builder.van/events"
  */
@@ -48,7 +48,7 @@ export const urls = {
      * Events listing page
      */
     list: () => buildUrl("/events"),
-    
+
     /**
      * Individual event detail page
      * @param slug - Event slug identifier
@@ -64,7 +64,7 @@ export const urls = {
      * Recaps listing page
      */
     list: () => buildUrl("/recaps"),
-    
+
     /**
      * Individual recap detail page
      * @param slug - Recap slug identifier
@@ -80,12 +80,12 @@ export const urls = {
      * Bitcoin 101 page
      */
     bitcoin101: () => buildUrl("/bitcoin-101"),
-    
+
     /**
      * Lightning Network 101 page
      */
     lightning101: () => buildUrl("/lightning-101"),
-    
+
     /**
      * Layer 2 overview page
      */
@@ -100,22 +100,22 @@ export const urls = {
      * About overview page
      */
     overview: () => buildUrl("/about"),
-    
+
     /**
      * Mission statement page
      */
     mission: () => buildUrl("/about/mission"),
-    
+
     /**
      * Vision statement page
      */
     vision: () => buildUrl("/about/vision"),
-    
+
     /**
      * Charter page
      */
     charter: () => buildUrl("/about/charter"),
-    
+
     /**
      * Philosophy page
      */
@@ -154,23 +154,23 @@ export const urls = {
  */
 export const paths = {
   home: () => "/",
-  
+
   events: {
     list: () => "/events",
     detail: (slug: string) => `/events/${slug}`,
   },
-  
+
   recaps: {
     list: () => "/recaps",
     detail: (slug: string) => `/recaps/${slug}`,
   },
-  
+
   education: {
     bitcoin101: () => "/bitcoin-101",
     lightning101: () => "/lightning-101",
     layer2: () => "/layer-2-overview",
   },
-  
+
   about: {
     overview: () => "/about",
     mission: () => "/about/mission",
@@ -178,11 +178,10 @@ export const paths = {
     charter: () => "/about/charter",
     philosophy: () => "/about/philosophy",
   },
-  
+
   resources: () => "/resources",
   projects: () => "/projects",
   vibeApps: () => "/vibe-apps",
   onboarding: () => "/onboarding",
   whatToExpect: () => "/what-to-expect",
 } as const;
-

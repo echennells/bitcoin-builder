@@ -1,6 +1,7 @@
 import { PageContainer } from "@/components/layout/PageContainer";
 import { Heading } from "@/components/ui/Heading";
 import { Section } from "@/components/ui/Section";
+
 import { loadVibeApps } from "@/lib/content";
 import { generateMetadata as generateMeta } from "@/lib/seo";
 
@@ -32,8 +33,8 @@ export default function VibeAppsPage() {
                     app.status === "live"
                       ? "bg-green-900 text-green-300"
                       : app.status === "development"
-                      ? "bg-blue-900 text-blue-300"
-                      : "bg-neutral-800 text-neutral-400"
+                        ? "bg-blue-900 text-blue-300"
+                        : "bg-neutral-800 text-neutral-400"
                   }`}
                 >
                   {app.status}
@@ -65,4 +66,3 @@ export default function VibeAppsPage() {
     </PageContainer>
   );
 }
-

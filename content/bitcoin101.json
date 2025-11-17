@@ -44,7 +44,12 @@
   "meta": {
     "title": "Bitcoin 101 | Builder Vancouver",
     "description": "Learn Bitcoin basics: what it is, how it works, and why it matters. Beginner-friendly introduction to Bitcoin fundamentals.",
-    "keywords": ["bitcoin", "bitcoin 101", "bitcoin basics", "cryptocurrency", "blockchain"]
+    "keywords": [
+      "bitcoin",
+      "bitcoin 101",
+      "bitcoin basics",
+      "cryptocurrency",
+      "blockchain"
+    ]
   }
 }
-

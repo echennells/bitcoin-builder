@@ -1,11 +1,18 @@
-import { notFound } from "next/navigation";
 import Link from "next/link";
+import { notFound } from "next/navigation";
+
 import { PageContainer } from "@/components/layout/PageContainer";
+import { JsonLd } from "@/components/seo/JsonLd";
 import { Heading } from "@/components/ui/Heading";
 import { Section } from "@/components/ui/Section";
-import { JsonLd } from "@/components/seo/JsonLd";
+
 import { loadRecap, loadRecaps } from "@/lib/content";
-import { generateMetadata as generateMeta, createArticleSchema, createBreadcrumbList, createSchemaGraph } from "@/lib/seo";
+import {
+  createArticleSchema,
+  createBreadcrumbList,
+  createSchemaGraph,
+  generateMetadata as generateMeta,
+} from "@/lib/seo";
 import { urls } from "@/lib/utils/urls";
 
 interface RecapPageProps {
@@ -15,7 +22,7 @@ interface RecapPageProps {
 export async function generateMetadata({ params }: RecapPageProps) {
   const { slug } = await params;
   const recap = loadRecap(slug);
-  
+
   if (!recap) {
     return {};
   }
@@ -78,33 +85,32 @@ export default async function RecapPage({ params }: RecapPageProps) {
         <p className="text-xl text-neutral-300 mb-12">{recap.summary}</p>
 
         {recap.sections.map((section, index) => (
-        <Section key={index}>
-          <Heading level="h2" className="text-neutral-100 mb-4">
-            {section.title}
-          </Heading>
-          <div className="text-lg text-neutral-300 mb-6 whitespace-pre-line leading-relaxed">
-            {section.body}
-          </div>
-          {section.links && section.links.length > 0 && (
-            <div className="flex flex-wrap gap-4">
-              {section.links.map((link, linkIndex) => (
-                <Link
-                  key={linkIndex}
-                  href={link.url}
-                  className="text-orange-400 hover:text-orange-300 font-medium underline transition-colors"
-                  {...(link.external
-                    ? { target: "_blank", rel: "noopener noreferrer" }
-                    : {})}
-                >
-                  {link.text}
-                </Link>
-              ))}
+          <Section key={index}>
+            <Heading level="h2" className="text-neutral-100 mb-4">
+              {section.title}
+            </Heading>
+            <div className="text-lg text-neutral-300 mb-6 whitespace-pre-line leading-relaxed">
+              {section.body}
             </div>
-          )}
-        </Section>
-      ))}
+            {section.links && section.links.length > 0 && (
+              <div className="flex flex-wrap gap-4">
+                {section.links.map((link, linkIndex) => (
+                  <Link
+                    key={linkIndex}
+                    href={link.url}
+                    className="text-orange-400 hover:text-orange-300 font-medium underline transition-colors"
+                    {...(link.external
+                      ? { target: "_blank", rel: "noopener noreferrer" }
+                      : {})}
+                  >
+                    {link.text}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </Section>
+        ))}
       </PageContainer>
     </>
   );
 }
-

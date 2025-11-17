@@ -34,9 +34,14 @@
       "meta": {
         "title": "Lightning Network Workshop Recap | Builder Vancouver",
         "description": "Recap of our Lightning Network workshop covering payment channels, routing, and hands-on node operation.",
-        "keywords": ["recap", "lightning network", "workshop", "bitcoin", "builder vancouver"]
+        "keywords": [
+          "recap",
+          "lightning network",
+          "workshop",
+          "bitcoin",
+          "builder vancouver"
+        ]
       }
     }
   ]
 }
-

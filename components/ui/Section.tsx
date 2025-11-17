@@ -1,8 +1,8 @@
 import type { ReactNode } from "react";
 
 interface SectionProps {
-    children: ReactNode;
-    className?: string;
+  children: ReactNode;
+  className?: string;
 }
 
 /**
@@ -10,10 +10,7 @@ interface SectionProps {
  * Provides standard padding and layout for content sections
  */
 export function Section({ children, className = "" }: SectionProps) {
-    return (
-        <section className={`mb-12 last:mb-0 ${className}`}>
-            {children}
-        </section>
-    );
+  return (
+    <section className={`mb-12 last:mb-0 ${className}`}>{children}</section>
+  );
 }
-

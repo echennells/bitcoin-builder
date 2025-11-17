@@ -87,8 +87,15 @@ export interface Event extends Thing {
   location?: Place | string;
   organizer?: Organization | Person;
   performer?: Person | Organization | Person[] | Organization[];
-  eventStatus?: "EventScheduled" | "EventCancelled" | "EventPostponed" | "EventRescheduled";
-  eventAttendanceMode?: "OfflineEventAttendanceMode" | "OnlineEventAttendanceMode" | "MixedEventAttendanceMode";
+  eventStatus?:
+    | "EventScheduled"
+    | "EventCancelled"
+    | "EventPostponed"
+    | "EventRescheduled";
+  eventAttendanceMode?:
+    | "OfflineEventAttendanceMode"
+    | "OnlineEventAttendanceMode"
+    | "MixedEventAttendanceMode";
   offers?: Offer | Offer[];
   isAccessibleForFree?: boolean;
 }
@@ -247,4 +254,3 @@ export interface WithContext<T> {
 
 // Helper type for JSON-LD documents
 export type JsonLdDocument<T = Thing> = WithContext<T> & T;
-

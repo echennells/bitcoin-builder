@@ -31,9 +31,14 @@
       "meta": {
         "title": "Lightning Network Workshop | Builder Vancouver",
         "description": "Hands-on Lightning Network workshop. Learn to set up nodes, manage channels, and make payments.",
-        "keywords": ["lightning network", "workshop", "bitcoin", "vancouver", "hands-on"]
+        "keywords": [
+          "lightning network",
+          "workshop",
+          "bitcoin",
+          "vancouver",
+          "hands-on"
+        ]
       }
     }
   ]
 }
-

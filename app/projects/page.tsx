@@ -1,6 +1,7 @@
 import { PageContainer } from "@/components/layout/PageContainer";
 import { Heading } from "@/components/ui/Heading";
 import { Section } from "@/components/ui/Section";
+
 import { loadProjects } from "@/lib/content";
 import { generateMetadata as generateMeta } from "@/lib/seo";
 
@@ -32,8 +33,8 @@ export default function ProjectsPage() {
                     project.status === "active"
                       ? "bg-green-900 text-green-300"
                       : project.status === "completed"
-                      ? "bg-blue-900 text-blue-300"
-                      : "bg-neutral-800 text-neutral-400"
+                        ? "bg-blue-900 text-blue-300"
+                        : "bg-neutral-800 text-neutral-400"
                   }`}
                 >
                   {project.status}
@@ -71,4 +72,3 @@ export default function ProjectsPage() {
     </PageContainer>
   );
 }
-

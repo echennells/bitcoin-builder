@@ -1,11 +1,18 @@
-import { notFound } from "next/navigation";
 import Link from "next/link";
+import { notFound } from "next/navigation";
+
 import { PageContainer } from "@/components/layout/PageContainer";
+import { JsonLd } from "@/components/seo/JsonLd";
 import { Heading } from "@/components/ui/Heading";
 import { Section } from "@/components/ui/Section";
-import { JsonLd } from "@/components/seo/JsonLd";
+
 import { loadEvent, loadEvents } from "@/lib/content";
-import { generateMetadata as generateMeta, createEventSchema, createBreadcrumbList, createSchemaGraph } from "@/lib/seo";
+import {
+  createBreadcrumbList,
+  createEventSchema,
+  createSchemaGraph,
+  generateMetadata as generateMeta,
+} from "@/lib/seo";
 import { urls } from "@/lib/utils/urls";
 
 interface EventPageProps {
@@ -15,7 +22,7 @@ interface EventPageProps {
 export async function generateMetadata({ params }: EventPageProps) {
   const { slug } = await params;
   const event = loadEvent(slug);
-  
+
   if (!event) {
     return {};
   }
@@ -109,4 +116,3 @@ export default async function EventPage({ params }: EventPageProps) {
     </>
   );
 }
-

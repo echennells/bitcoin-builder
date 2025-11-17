@@ -42,7 +42,12 @@
   "meta": {
     "title": "Resources | Builder Vancouver",
     "description": "Curated Bitcoin resources including documentation, books, tools, and learning materials for all levels.",
-    "keywords": ["bitcoin resources", "learning", "documentation", "lightning network", "developer tools"]
+    "keywords": [
+      "bitcoin resources",
+      "learning",
+      "documentation",
+      "lightning network",
+      "developer tools"
+    ]
   }
 }
-

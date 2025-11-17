@@ -1,7 +1,7 @@
-import { loadEvents, loadRecaps } from "@/lib/content";
-import { getSiteUrl, urls } from "@/lib/utils/urls";
-
 import type { MetadataRoute } from "next";
+
+import { loadEvents, loadRecaps } from "@/lib/content";
+import { urls } from "@/lib/utils/urls";
 
 /**
  * Dynamic sitemap generation for Builder Vancouver
@@ -9,8 +9,6 @@ import type { MetadataRoute } from "next";
  */
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = getSiteUrl();
-
   // Load dynamic content
   const { events } = loadEvents();
   const { recaps } = loadRecaps();
@@ -133,4 +131,3 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [...staticPages, ...eventPages, ...recapPages];
 }
-

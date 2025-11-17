@@ -102,14 +102,14 @@ content/*.json → Zod Schema → TypeScript Types → React Components
 
 ### Content Types
 
-| Type | Schema | Use Case |
-|------|--------|----------|
-| Events | `EventsCollectionSchema` | Upcoming meetups |
-| Recaps | `RecapsCollectionSchema` | Past event summaries |
-| Educational | `EducationalContentSchema` | Bitcoin 101, Lightning 101 |
-| Resources | `ResourcesCollectionSchema` | Learning materials |
-| Projects | `ProjectsCollectionSchema` | Community projects |
-| Foundation | `MissionSchema`, etc. | Organization info |
+| Type        | Schema                      | Use Case                   |
+| ----------- | --------------------------- | -------------------------- |
+| Events      | `EventsCollectionSchema`    | Upcoming meetups           |
+| Recaps      | `RecapsCollectionSchema`    | Past event summaries       |
+| Educational | `EducationalContentSchema`  | Bitcoin 101, Lightning 101 |
+| Resources   | `ResourcesCollectionSchema` | Learning materials         |
+| Projects    | `ProjectsCollectionSchema`  | Community projects         |
+| Foundation  | `MissionSchema`, etc.       | Organization info          |
 
 ## Data Loading Patterns
 
@@ -125,6 +125,7 @@ export default function EventsPage() {
 ```
 
 **When to use:**
+
 - Server Components (default)
 - Build-time data loading
 - Static pages
@@ -141,6 +142,7 @@ export default async function EventsPage() {
 ```
 
 **When to use:**
+
 - When you need non-blocking I/O
 - Streaming server components
 - Complex data dependencies
@@ -153,11 +155,11 @@ For [slug] routes:
 export default async function EventPage({ params }: Props) {
   const { slug } = await params; // Always await params!
   const event = loadEvent(slug);
-  
+
   if (!event) {
     notFound(); // Trigger 404
   }
-  
+
   return <div>{/* render */}</div>;
 }
 ```
@@ -179,6 +181,7 @@ export const metadata = generatePageMetadata(
 ### Structured Data (JSON-LD)
 
 Pages include Schema.org structured data for:
+
 - **Rich search results**: Enhanced Google snippets
 - **AI understanding**: Better context for LLMs
 - **Knowledge graphs**: Integration with Google Knowledge Graph
@@ -224,15 +227,15 @@ createBreadcrumbList([{ name, url }, ...])
 All URLs are generated through utility functions to ensure consistency:
 
 ```typescript
-import { urls, paths } from '@/lib/utils/urls';
+import { paths, urls } from "@/lib/utils/urls";
 
 // For structured data (full URLs)
-urls.events.list()       // "https://builder.van/events"
-urls.events.detail(slug) // "https://builder.van/events/workshop"
+urls.events.list(); // "https://builder.van/events"
+urls.events.detail(slug); // "https://builder.van/events/workshop"
 
 // For Next.js Link (paths only)
-paths.events.list()       // "/events"
-paths.events.detail(slug) // "/events/workshop"
+paths.events.list(); // "/events"
+paths.events.detail(slug); // "/events/workshop"
 ```
 
 ### Benefits
@@ -256,6 +259,7 @@ export function EventsList() {
 ```
 
 **Benefits:**
+
 - No client JavaScript
 - Direct data access
 - SEO-friendly
@@ -279,7 +283,7 @@ export function EventsPage() {
 ### Styling Conventions
 
 - **Tailwind CSS**: Use utility classes
-- **Consistent Colors**: 
+- **Consistent Colors**:
   - Primary: `orange-400` (Bitcoin orange)
   - Background: `neutral-950` (dark)
   - Text: `neutral-100` (light)
@@ -410,6 +414,7 @@ npm run build
 ### Static Export
 
 The site is optimized for static hosting:
+
 - All pages pre-rendered
 - No server runtime required
 - Deploy to Vercel, Netlify, or any static host
@@ -472,4 +477,3 @@ The site is optimized for static hosting:
 ## Questions & Contribution
 
 For questions about architecture decisions or to propose changes, refer to existing patterns in the codebase or consult this documentation.
-

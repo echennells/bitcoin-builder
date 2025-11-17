@@ -1,5 +1,3 @@
-
-
 /**
  * Structured Data Builders for Schema.org JSON-LD
  * Type-safe builders for all schema types used in Builder Vancouver
@@ -45,7 +43,9 @@ export type HowToSchemaInput = Parameters<typeof createHowToSchema>[0];
 /**
  * Input type for createSoftwareApplicationSchema
  */
-export type SoftwareApplicationSchemaInput = Parameters<typeof createSoftwareApplicationSchema>[0];
+export type SoftwareApplicationSchemaInput = Parameters<
+  typeof createSoftwareApplicationSchema
+>[0];
 
 /**
  * Input type for createCollectionPageSchema
@@ -104,7 +104,7 @@ export function createWebSiteSchema() {
     },
     potentialAction: {
       "@type": "SearchAction",
-      "target": `${SITE_URL}/search?q={search_term_string}`,
+      target: `${SITE_URL}/search?q={search_term_string}`,
       "query-input": "required name=search_term_string",
     },
   };
@@ -351,10 +351,9 @@ export function createSoftwareApplicationSchema(software: {
 /**
  * Helper to combine multiple schemas into a graph
  */
-export function createSchemaGraph(...schemas: any[]) {
+export function createSchemaGraph(...schemas: Record<string, unknown>[]) {
   return {
     "@context": "https://schema.org",
     "@graph": schemas,
   };
 }
-

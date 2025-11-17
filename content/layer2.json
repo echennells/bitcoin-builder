@@ -46,7 +46,13 @@
   "meta": {
     "title": "Layer 2 Overview | Builder Vancouver",
     "description": "Explore Bitcoin Layer 2 solutions including Lightning Network, RGB, Stacks, and more. Understand scaling and new Bitcoin capabilities.",
-    "keywords": ["layer 2", "bitcoin scaling", "lightning network", "rgb", "stacks", "bitcoin layer 2"]
+    "keywords": [
+      "layer 2",
+      "bitcoin scaling",
+      "lightning network",
+      "rgb",
+      "stacks",
+      "bitcoin layer 2"
+    ]
   }
 }
-

@@ -1,14 +1,31 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+
 import { PageContainer } from "@/components/layout/PageContainer";
 import { Heading } from "@/components/ui/Heading";
 import { Section } from "@/components/ui/Section";
-import { loadMission, loadVision, loadCharter, loadPhilosophy } from "@/lib/content";
-import type { Metadata } from "next";
+
+import {
+  loadCharter,
+  loadMission,
+  loadPhilosophy,
+  loadVision,
+} from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "About Builder | Foundation & Philosophy",
-  description: "Discover Builder's mission, vision, charter, and philosophy. Learn about our commitment to building Bitcoin products through open collaboration and structured knowledge.",
-  keywords: ["builder", "mission", "vision", "charter", "philosophy", "bitcoin", "open source", "sovereignty"],
+  description:
+    "Discover Builder's mission, vision, charter, and philosophy. Learn about our commitment to building Bitcoin products through open collaboration and structured knowledge.",
+  keywords: [
+    "builder",
+    "mission",
+    "vision",
+    "charter",
+    "philosophy",
+    "bitcoin",
+    "open source",
+    "sovereignty",
+  ],
 };
 
 export default function AboutPage() {
@@ -24,7 +41,9 @@ export default function AboutPage() {
           About Builder
         </Heading>
         <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
-          Builder exists to accelerate the creation of Bitcoin products through openness, neutrality, sovereignty, structured knowledge, and collaboration.
+          Builder exists to accelerate the creation of Bitcoin products through
+          openness, neutrality, sovereignty, structured knowledge, and
+          collaboration.
         </p>
       </div>
 
@@ -33,7 +52,9 @@ export default function AboutPage() {
           Our Foundation
         </Heading>
         <p className="text-lg text-neutral-300 mb-8 leading-relaxed">
-          These four documents define who we are, what we believe, and how we operate. They form the constitutional layer of Builder—immutable first-class principles that guide everything we create.
+          These four documents define who we are, what we believe, and how we
+          operate. They form the constitutional layer of Builder—immutable
+          first-class principles that guide everything we create.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -69,7 +90,11 @@ export default function AboutPage() {
           Why This Matters
         </Heading>
         <p className="text-lg text-neutral-300 leading-relaxed">
-          Builder is not just a meetup—it's a movement to create better Bitcoin products through structured knowledge and collaborative building. These foundational documents ensure consistency across all Builder chapters and provide a clear framework for decision-making, content creation, and community engagement.
+          Builder is not just a meetup—it&apos;s a movement to create better
+          Bitcoin products through structured knowledge and collaborative
+          building. These foundational documents ensure consistency across all
+          Builder chapters and provide a clear framework for decision-making,
+          content creation, and community engagement.
         </p>
       </Section>
     </PageContainer>
@@ -101,4 +126,3 @@ function FoundationCard({ title, summary, href, theme }: FoundationCardProps) {
     </Link>
   );
 }
-

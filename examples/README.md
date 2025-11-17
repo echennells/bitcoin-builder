@@ -5,7 +5,9 @@ This directory contains annotated example files demonstrating best practices for
 ## Files
 
 ### `example-page-with-seo.tsx`
+
 Complete page component implementation showing:
+
 - Next.js metadata generation
 - Schema.org structured data (JSON-LD)
 - Breadcrumb navigation
@@ -16,7 +18,9 @@ Complete page component implementation showing:
 **Use this as a template** when creating new static pages.
 
 ### `example-dynamic-route.tsx`
+
 Dynamic route handling with [slug] parameters:
+
 - Async params handling (Next.js 15+ requirement)
 - 404 error handling with `notFound()`
 - Static path generation for SSG
@@ -26,7 +30,9 @@ Dynamic route handling with [slug] parameters:
 **Use this as a template** when creating new dynamic routes.
 
 ### `example-content-file.json`
+
 Annotated JSON content file showing:
+
 - All available schema fields
 - Proper formatting and structure
 - Comments explaining each field
@@ -65,6 +71,7 @@ All examples follow these core principles:
 ## Common Patterns
 
 ### Loading Content
+
 ```typescript
 // Static content
 const content = loadBitcoin101();
@@ -77,17 +84,19 @@ const event = loadEvent(slug);
 ```
 
 ### Generating URLs
+
 ```typescript
 // For structured data (full URLs)
-urls.events.list()       // "https://builder.van/events"
-urls.events.detail(slug) // "https://builder.van/events/lightning-workshop"
+urls.events.list(); // "https://builder.van/events"
+urls.events.detail(slug); // "https://builder.van/events/lightning-workshop"
 
 // For Next.js Link (paths only)
-paths.events.list()       // "/events"
-paths.events.detail(slug) // "/events/lightning-workshop"
+paths.events.list(); // "/events"
+paths.events.detail(slug); // "/events/lightning-workshop"
 ```
 
 ### Creating Structured Data
+
 ```typescript
 // Choose appropriate schema type
 const eventSchema = createEventSchema(event);
@@ -125,4 +134,3 @@ After creating a new page based on these examples:
 ## Questions?
 
 If these examples don't cover your use case, refer to existing page implementations in `/app` or consult the architecture documentation.
-

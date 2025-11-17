@@ -12,30 +12,30 @@
  *   0 - All content valid
  *   1 - Validation errors found
  */
-
 import { readFileSync } from "fs";
 import { join } from "path";
 import { z } from "zod";
+
 import {
-  EventsCollectionSchema,
-  OnboardingSchema,
+  CharterSchema,
   EducationalContentSchema,
-  ResourcesCollectionSchema,
-  RecapsCollectionSchema,
-  ProjectsCollectionSchema,
-  VibeAppsCollectionSchema,
-  WhatToExpectSchema,
+  EventsCollectionSchema,
   HomeSchema,
   MissionSchema,
-  VisionSchema,
-  CharterSchema,
+  OnboardingSchema,
   PhilosophySchema,
+  ProjectsCollectionSchema,
+  RecapsCollectionSchema,
+  ResourcesCollectionSchema,
+  VibeAppsCollectionSchema,
+  VisionSchema,
+  WhatToExpectSchema,
 } from "../lib/schemas";
 
 /**
  * Mapping of content files to their schemas
  */
-const CONTENT_SCHEMAS: Record<string, z.ZodSchema<any>> = {
+const CONTENT_SCHEMAS: Record<string, z.ZodSchema<unknown>> = {
   "events.json": EventsCollectionSchema,
   "onboarding.json": OnboardingSchema,
   "bitcoin101.json": EducationalContentSchema,
@@ -64,7 +64,7 @@ interface ValidationResult {
  */
 function validateFile(
   filename: string,
-  schema: z.ZodSchema<any>,
+  schema: z.ZodSchema<unknown>,
   contentDir: string
 ): ValidationResult {
   try {
@@ -172,7 +172,9 @@ function main() {
         const suggestions = getSuggestions(result.errors);
         if (suggestions.length > 0) {
           console.log("\n  Suggestions:");
-          suggestions.forEach((suggestion) => console.log(`  💡 ${suggestion}`));
+          suggestions.forEach((suggestion) =>
+            console.log(`  💡 ${suggestion}`)
+          );
         }
       }
 
@@ -186,15 +188,18 @@ function main() {
   const totalCount = results.length;
 
   if (hasErrors) {
-    console.log(`\n❌ Validation failed: ${validCount}/${totalCount} files valid\n`);
+    console.log(
+      `\n❌ Validation failed: ${validCount}/${totalCount} files valid\n`
+    );
     console.log("Fix the errors above and run validation again.");
     process.exit(1);
   } else {
-    console.log(`\n✅ All content files validated successfully! (${totalCount}/${totalCount})\n`);
+    console.log(
+      `\n✅ All content files validated successfully! (${totalCount}/${totalCount})\n`
+    );
     process.exit(0);
   }
 }
 
 // Run validation
 main();
-

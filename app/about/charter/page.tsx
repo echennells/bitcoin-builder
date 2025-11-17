@@ -1,13 +1,24 @@
+import type { Metadata } from "next";
+
 import { PageContainer } from "@/components/layout/PageContainer";
 import { Heading } from "@/components/ui/Heading";
 import { Section } from "@/components/ui/Section";
+
 import { loadCharter } from "@/lib/content";
-import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Builder Charter",
-  description: "Our pillars and principles for building an open, neutral, and sovereign Bitcoin ecosystem.",
-  keywords: ["builder", "charter", "principles", "pillars", "bitcoin", "sovereignty", "collaboration"],
+  description:
+    "Our pillars and principles for building an open, neutral, and sovereign Bitcoin ecosystem.",
+  keywords: [
+    "builder",
+    "charter",
+    "principles",
+    "pillars",
+    "bitcoin",
+    "sovereignty",
+    "collaboration",
+  ],
 };
 
 export default function CharterPage() {
@@ -29,7 +40,8 @@ export default function CharterPage() {
           Our Five Pillars
         </Heading>
         <p className="text-lg text-neutral-300 mb-8 leading-relaxed">
-          These pillars define how we operate and what we value. They guide our community interactions, content creation, and product development.
+          These pillars define how we operate and what we value. They guide our
+          community interactions, content creation, and product development.
         </p>
 
         <div className="space-y-6">
@@ -61,7 +73,8 @@ export default function CharterPage() {
           Our Operating Principles
         </Heading>
         <p className="text-lg text-neutral-300 mb-6 leading-relaxed">
-          These principles inform how we engage with each other and the broader Bitcoin community.
+          These principles inform how we engage with each other and the broader
+          Bitcoin community.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -82,10 +95,12 @@ export default function CharterPage() {
           Living the Charter
         </Heading>
         <p className="text-lg text-neutral-300 leading-relaxed">
-          The Charter is not a static document—it's a living commitment we uphold through our actions. Every event, every piece of content, and every community interaction should reflect these pillars and principles.
+          The Charter is not a static document—it&apos;s a living commitment we
+          uphold through our actions. Every event, every piece of content, and
+          every community interaction should reflect these pillars and
+          principles.
         </p>
       </Section>
     </PageContainer>
   );
 }
-

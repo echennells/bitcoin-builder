@@ -91,6 +91,7 @@ Required for SEO:
 ```
 
 **Best Practices:**
+
 - Title: Include page name and site name, under 60 characters
 - Description: Compelling summary, 120-160 characters
 - Keywords: 3-7 relevant terms
@@ -103,8 +104,12 @@ Content is organized into sections:
 {
   "title": "Section Heading",
   "body": "Section content. Use \\n\\n for paragraphs.",
-  "links": [/* optional */],
-  "images": [/* optional */]
+  "links": [
+    /* optional */
+  ],
+  "images": [
+    /* optional */
+  ]
 }
 ```
 
@@ -114,7 +119,7 @@ Content is organized into sections:
 {
   "text": "Link Text",
   "url": "https://example.com or /internal-page",
-  "external": true  // true for external, false for internal
+  "external": true // true for external, false for internal
 }
 ```
 
@@ -140,8 +145,12 @@ Content is organized into sections:
       "time": "H:MM AM/PM - H:MM AM/PM",
       "location": "Venue Name, City",
       "description": "Brief event description",
-      "sections": [/* Section objects */],
-      "meta": {/* Meta object */}
+      "sections": [
+        /* Section objects */
+      ],
+      "meta": {
+        /* Meta object */
+      }
     }
   ]
 }
@@ -171,8 +180,12 @@ See full example in `/examples/example-content-file.json`
       "date": "YYYY-MM-DD",
       "eventTitle": "Original Event Name",
       "summary": "Brief recap summary",
-      "sections": [/* Section objects */],
-      "meta": {/* Meta object */}
+      "sections": [
+        /* Section objects */
+      ],
+      "meta": {
+        /* Meta object */
+      }
     }
   ]
 }
@@ -187,8 +200,12 @@ Used for Bitcoin 101, Lightning 101, Layer 2:
   "title": "Course Title",
   "slug": "url-slug",
   "description": "Course description",
-  "sections": [/* Section objects */],
-  "meta": {/* Meta object */}
+  "sections": [
+    /* Section objects */
+  ],
+  "meta": {
+    /* Meta object */
+  }
 }
 ```
 
@@ -208,7 +225,9 @@ Used for Bitcoin 101, Lightning 101, Layer 2:
       "tags": ["tag1", "tag2"]
     }
   ],
-  "meta": {/* Meta object */}
+  "meta": {
+    /* Meta object */
+  }
 }
 ```
 
@@ -224,11 +243,15 @@ Used for Bitcoin 101, Lightning 101, Layer 2:
       "title": "Project Name",
       "slug": "project-slug",
       "description": "Project description",
-      "status": "active",  // active, completed, or archived
-      "links": [/* Link objects */]
+      "status": "active", // active, completed, or archived
+      "links": [
+        /* Link objects */
+      ]
     }
   ],
-  "meta": {/* Meta object */}
+  "meta": {
+    /* Meta object */
+  }
 }
 ```
 
@@ -271,12 +294,14 @@ Used for Bitcoin 101, Lightning 101, Layer 2:
 ### URL Slugs
 
 Good slugs are:
+
 - **Descriptive**: "lightning-network-workshop"
 - **Consistent**: Always use kebab-case
 - **Permanent**: Don't change once published
 - **Brief**: Under 50 characters when possible
 
 Bad examples:
+
 - ❌ "event1" - Not descriptive
 - ❌ "Lightning_Network_Workshop" - Wrong case
 - ❌ "super-awesome-lightning-network-workshop-december-2025" - Too long
@@ -286,23 +311,27 @@ Bad examples:
 ### Local Development
 
 1. **Edit content file**
+
    ```bash
    # Edit the file
    code content/events.json
    ```
 
 2. **Validate changes**
+
    ```bash
    npm run validate:content
    ```
 
 3. **Test locally**
+
    ```bash
    npm run dev
    # Visit http://localhost:3000
    ```
 
 4. **Check types**
+
    ```bash
    npm run tsc
    ```
@@ -327,6 +356,7 @@ When validation fails, you'll see detailed error messages:
 ```
 
 Common fixes:
+
 - **Invalid date**: Use YYYY-MM-DD format
 - **Missing field**: Add all required fields
 - **Wrong type**: Check string vs number vs boolean
@@ -352,12 +382,12 @@ Use `\n\n` to create paragraph breaks:
     {
       "text": "Bitcoin.org",
       "url": "https://bitcoin.org",
-      "external": true  // Opens in new tab
+      "external": true // Opens in new tab
     },
     {
       "text": "Our Events",
       "url": "/events",
-      "external": false  // Internal navigation
+      "external": false // Internal navigation
     }
   ]
 }
@@ -380,6 +410,7 @@ Images should be placed in `/public/images/`:
 ```
 
 **Image Best Practices:**
+
 - Optimize images (WebP format, compressed)
 - Use descriptive filenames
 - Write detailed alt text
@@ -419,6 +450,7 @@ Images should be placed in `/public/images/`:
 ### Sensitive Topics
 
 When discussing:
+
 - **Price/investment**: Focus on technology, not speculation
 - **Regulations**: Present facts, not opinions
 - **Controversies**: Remain neutral and factual
@@ -468,4 +500,3 @@ Potential enhancements to content system:
 ---
 
 Happy content authoring! 🚀
-

@@ -1,6 +1,7 @@
 import { PageContainer } from "@/components/layout/PageContainer";
 import { Heading } from "@/components/ui/Heading";
 import { Section } from "@/components/ui/Section";
+
 import { loadResources } from "@/lib/content";
 import { generateMetadata as generateMeta } from "@/lib/seo";
 
@@ -51,7 +52,9 @@ export default function ResourcesPage() {
                   <h3 className="text-xl font-bold text-neutral-100 mb-2 group-hover:text-orange-400 transition-colors">
                     {resource.title} ↗
                   </h3>
-                  <p className="text-neutral-300 mb-3">{resource.description}</p>
+                  <p className="text-neutral-300 mb-3">
+                    {resource.description}
+                  </p>
                   {resource.tags && resource.tags.length > 0 && (
                     <div className="flex flex-wrap gap-2">
                       {resource.tags.map((tag, tagIndex) => (
@@ -73,4 +76,3 @@ export default function ResourcesPage() {
     </PageContainer>
   );
 }
-
