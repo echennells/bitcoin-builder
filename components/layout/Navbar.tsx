@@ -102,6 +102,7 @@ export function Navbar() {
       children: [
         { href: "/cities", label: "Cities" },
         { href: "/sponsors", label: "Sponsors" },
+        { href: "/members", label: "Members" },
       ],
     },
   ];
