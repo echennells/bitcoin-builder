@@ -2,14 +2,7 @@
   "title": "Vibe Apps",
   "slug": "vibe-apps",
   "description": "Experimental apps and tools for Builder Vancouver events and community.",
-  "apps": [
-    {
-      "title": "Event Check-in",
-      "slug": "event-checkin",
-      "description": "Lightning-powered event check-in system. Pay a small Lightning invoice to confirm attendance.",
-      "status": "concept"
-    }
-  ],
+  "apps": [],
   "meta": {
     "title": "Vibe Apps | Builder Vancouver",
     "description": "Experimental Bitcoin and Lightning apps for Builder Vancouver community.",

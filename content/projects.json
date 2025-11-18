@@ -2,21 +2,7 @@
   "title": "Builder Projects",
   "slug": "projects",
   "description": "Community projects and collaborative builds from Builder Vancouver members.",
-  "projects": [
-    {
-      "title": "Lightning Tip Bot",
-      "slug": "lightning-tip-bot",
-      "description": "A community-built bot for sending Lightning tips in our chat channels. Open source and extensible.",
-      "status": "active",
-      "links": [
-        {
-          "text": "View on GitHub",
-          "url": "https://github.com/builder-vancouver/lightning-tip-bot",
-          "external": true
-        }
-      ]
-    }
-  ],
+  "projects": [],
   "meta": {
     "title": "Projects | Builder Vancouver",
     "description": "Explore community projects and collaborative builds from Builder Vancouver members.",

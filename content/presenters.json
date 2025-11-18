@@ -1,60 +1,6 @@
 {
   "presenters": [
     {
-      "id": "presenter-alice-johnson",
-      "name": "Alice Johnson",
-      "slug": "alice-johnson",
-      "bio": "Lightning Network developer and educator with 5 years of experience building Bitcoin infrastructure. Alice has contributed to multiple Lightning implementations and is passionate about making Bitcoin more accessible.",
-      "title": "Lightning Core Developer",
-      "company": "Lightning Labs",
-      "avatar": "/images/presenters/alice-johnson.jpg",
-      "links": {
-        "twitter": "https://twitter.com/alice_lightning",
-        "github": "https://github.com/alicej",
-        "website": "https://alice.dev",
-        "nostr": "npub1alice123456789"
-      }
-    },
-    {
-      "id": "presenter-bob-smith",
-      "name": "Bob Smith",
-      "slug": "bob-smith",
-      "bio": "Bitcoin protocol researcher and educator specializing in Taproot and Schnorr signatures. Bob has published multiple papers on Bitcoin scalability and privacy improvements.",
-      "title": "Bitcoin Protocol Researcher",
-      "company": "Bitcoin Research Lab",
-      "avatar": "/images/presenters/bob-smith.jpg",
-      "links": {
-        "twitter": "https://twitter.com/bob_bitcoin",
-        "github": "https://github.com/bobsmith",
-        "website": "https://bob.bitcoin.research"
-      }
-    },
-    {
-      "id": "presenter-builder-vancouver-organizer",
-      "name": "Builder Vancouver Team",
-      "slug": "builder-vancouver-organizer",
-      "bio": "The organizing team behind Builder Vancouver, dedicated to fostering a collaborative Bitcoin builder community in Vancouver. We focus on practical skills, structured knowledge, and open collaboration to accelerate Bitcoin product development.",
-      "title": "Builder Vancouver Organizers",
-      "company": "Builder Vancouver",
-      "avatar": "/images/presenters/builder-vancouver.jpg",
-      "links": {
-        "twitter": "https://twitter.com/builder_van",
-        "website": "https://builder.van",
-        "nostr": ""
-      }
-    },
-    {
-      "id": "presenter-builder-ops",
-      "name": "Builder Ops Team",
-      "slug": "builder-ops-team",
-      "bio": "The Builder Ops Team stewards the vibe coding workflow behind the Builder website\u2014from structured content design to AI-assisted shipping. They focus on translating experiments with ChatGPT, Cursor, and decentralized tech into educational resources for the Bitcoin community.",
-      "title": "Vibe Coding Facilitators",
-      "company": "Builder",
-      "links": {
-        "website": "https://builder.van"
-      }
-    },
-    {
       "id": "presenter-justin-ohalloran",
       "name": "Justin O'Halloran",
       "slug": "justin-ohalloran",
