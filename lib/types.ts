@@ -33,6 +33,9 @@ import {
   RoadmapItemSchema,
   RoadmapMilestoneSchema,
   SectionSchema,
+  SlideDeckSchema,
+  SlideSchema,
+  SlidesCollectionSchema,
   SponsorSchema,
   SponsorsCollectionSchema,
   TechnicalRoadmapSchema,
@@ -115,3 +118,8 @@ export type Presentation = z.infer<typeof PresentationSchema>;
 export type PresentationsCollection = z.infer<
   typeof PresentationsCollectionSchema
 >;
+
+// Slides types
+export type Slide = z.infer<typeof SlideSchema>;
+export type SlideDeck = z.infer<typeof SlideDeckSchema>;
+export type SlidesCollection = z.infer<typeof SlidesCollectionSchema>;

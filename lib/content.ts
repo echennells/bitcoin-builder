@@ -23,6 +23,8 @@ import {
   ResourcesCollectionSchema,
   RoadmapItemSchema,
   RoadmapMilestoneSchema,
+  SlideDeckSchema,
+  SlidesCollectionSchema,
   SponsorsCollectionSchema,
   TechnicalRoadmapSchema,
   VibeAppsCollectionSchema,
@@ -55,6 +57,8 @@ import type {
   ResourcesCollection,
   RoadmapItem,
   RoadmapMilestone,
+  SlideDeck,
+  SlidesCollection,
   Sponsor,
   SponsorsCollection,
   TechnicalRoadmap,
@@ -269,4 +273,22 @@ export async function getPresentationsByPresenter(
 ): Promise<Presentation[]> {
   const { presentations } = await loadPresentations();
   return presentations.filter((p) => p.presenterId === presenterId);
+}
+
+export async function loadSlides(): Promise<SlidesCollection> {
+  return loadContent("slides.json", SlidesCollectionSchema);
+}
+
+export async function loadSlideDeck(
+  slug: string
+): Promise<SlideDeck | undefined> {
+  const { slideDecks } = await loadSlides();
+  return slideDecks.find((d) => d.slug === slug);
+}
+
+export async function loadSlideDeckById(
+  id: string
+): Promise<SlideDeck | undefined> {
+  const { slideDecks } = await loadSlides();
+  return slideDecks.find((d) => d.id === id);
 }
