@@ -3,61 +3,89 @@
     {
       "title": "Builder Vancouver Launch Event",
       "slug": "builder-vancouver-launch",
-      "date": "2025-02-15",
-      "time": "6:00 PM - 9:00 PM",
-      "location": "TBD, Vancouver",
+      "date": "2025-11-18",
+      "time": "6:00 PM - 8:00 PM",
+      "location": "Funk Cafe, Vancouver",
       "cityId": "city-vancouver",
+      "sponsorIds": ["sponsor-funk-coffee", "sponsor-spiral"],
       "presentationIds": [
         "presentation-builder-vancouver-intro",
+        "presentation-spiral-bitcoin-merchant-community",
         "presentation-martin-montero-nostr-vancouver",
         "presentation-bepsi-machine-eric-chennels",
-        "presentation-bitpoints-me"
+        "presentation-bitpoints-me",
+        "presentation-vibe-coding-builder-2025"
       ],
       "description": "Join us for the inaugural Builder Vancouver event! We'll introduce the Builder movement, explore Vancouver's Bitcoin ecosystem, and kick off our monthly meetup series. This is the perfect opportunity to meet fellow builders, learn about our community, and get involved.",
       "schedule": [
         {
           "startTime": "6:00 PM",
           "endTime": "6:30 PM",
-          "title": "Doors Open & Networking",
-          "description": "Welcome! Grab a drink, meet fellow builders, and get settled in.",
+          "title": "Networking & Pizza",
+          "description": "Welcome! Grab some pizza, meet fellow builders, and get settled in.",
           "type": "networking"
         },
         {
           "startTime": "6:30 PM",
-          "endTime": "7:15 PM",
-          "title": "Welcome to Builder Vancouver",
-          "description": "Introduction to Builder Vancouver, our mission, vision, and what makes Vancouver a great Bitcoin builder city.",
+          "endTime": "6:40 PM",
+          "title": "Introduction & Overview",
+          "description": "Introduction to Builder Vancouver and overview of the evening.",
           "type": "presentation",
           "presentationId": "presentation-builder-vancouver-intro"
         },
         {
-          "startTime": "7:15 PM",
-          "endTime": "7:30 PM",
-          "title": "Break",
-          "description": "Short break for refreshments and networking.",
-          "type": "break"
+          "startTime": "6:40 PM",
+          "endTime": "6:50 PM",
+          "title": "Spiral.xyz and the Bitcoin Merchant Community Website",
+          "description": "Mat Balez presents a comprehensive overview of Spiral.xyz and the Bitcoin Merchant Community Website.",
+          "type": "presentation",
+          "presentationId": "presentation-spiral-bitcoin-merchant-community"
         },
         {
-          "startTime": "7:30 PM",
-          "endTime": "8:15 PM",
+          "startTime": "6:50 PM",
+          "endTime": "7:00 PM",
           "title": "Nostr and Building Community in Vancouver",
           "description": "Martin Montero from Rabble Labs presents on Nostr and the community being built in Vancouver.",
           "type": "presentation",
           "presentationId": "presentation-martin-montero-nostr-vancouver"
         },
         {
-          "startTime": "8:15 PM",
-          "endTime": "8:30 PM",
-          "title": "Open Discussion & Q&A",
-          "description": "Open discussion about Bitcoin building, Lightning Network, Nostr, and what you'd like to see in future meetups.",
+          "startTime": "7:00 PM",
+          "endTime": "7:10 PM",
+          "title": "The Bepsi Machine: Building a Bitcoin Vending Machine",
+          "description": "Eric Chennels discusses the tools and techniques used to build the Bepsi machine—a Bitcoin vending machine—and how vibe coding accelerated the development process.",
+          "type": "presentation",
+          "presentationId": "presentation-bepsi-machine-eric-chennels"
+        },
+        {
+          "startTime": "7:10 PM",
+          "endTime": "7:20 PM",
+          "title": "Introducing Bitpoints.me – A Bitcoin-native rewards system",
+          "description": "JP shares the story of Bitpoints.me, a Bitcoin-native rewards system that transforms traditional loyalty points into sats.",
+          "type": "presentation",
+          "presentationId": "presentation-bitpoints-me"
+        },
+        {
+          "startTime": "7:20 PM",
+          "endTime": "7:30 PM",
+          "title": "Vibe Coding the Builder Resource Center",
+          "description": "How the Builder Ops Team uses structured content, ChatGPT, and Cursor Agents to ship Bitcoin education faster.",
+          "type": "presentation",
+          "presentationId": "presentation-vibe-coding-builder-2025"
+        },
+        {
+          "startTime": "7:30 PM",
+          "endTime": "7:50 PM",
+          "title": "News Topics Discussion",
+          "description": "Discussion of current Bitcoin news topics and developments.",
           "type": "q-and-a"
         },
         {
-          "startTime": "8:30 PM",
-          "endTime": "9:00 PM",
-          "title": "Networking & Collaboration",
-          "description": "Continue the conversation, share ideas, and connect with fellow builders.",
-          "type": "networking"
+          "startTime": "7:50 PM",
+          "endTime": "8:00 PM",
+          "title": "Open Floor: Topic Suggestions",
+          "description": "Open floor for suggestions and ideas for future discussion topics.",
+          "type": "q-and-a"
         }
       ],
       "sections": [
@@ -71,7 +99,7 @@
         },
         {
           "title": "Getting There",
-          "body": "Location details will be announced closer to the event date. Follow us on social media for updates.",
+          "body": "Join us at Funk Cafe in Vancouver. Follow us on social media for updates.",
           "links": [
             {
               "text": "Follow @builder_van",

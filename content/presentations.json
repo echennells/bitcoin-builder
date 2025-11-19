@@ -8,7 +8,7 @@
       "overview": "This presentation serves as the opening session for Builder Vancouver's first event. We'll introduce attendees to the Builder movement, explain our mission and vision, explore why Vancouver is an exceptional Bitcoin builder city, and outline what to expect at our meetups. Perfect for newcomers and existing community members alike.",
       "presenterId": "presenter-builder-vancouver-organizer",
       "eventId": "event-builder-vancouver-launch",
-      "date": "2025-02-15",
+      "date": "2025-11-18",
       "duration": "30-45 minutes",
       "links": [
         {
@@ -66,6 +66,7 @@
       "description": "How the Builder Ops Team uses structured content, ChatGPT, and Cursor Agents to ship Bitcoin education faster.",
       "overview": "Builder treats vibe coding as an educational engine. This presentation walks through how the team turns loose ideas into structured content blocks, ships them through a Next.js + Vercel pipeline, and keeps iterating with ChatGPT Projects and Cursor Agents—often from a phone. Attendees will see how education-first workflows create real value for the Bitcoin ecosystem while laying the groundwork for future decentralized features.",
       "presenterId": "presenter-builder-ops",
+      "eventId": "event-builder-vancouver-launch",
       "date": "2025-11-18",
       "duration": "30 minutes",
       "links": [
@@ -129,7 +130,8 @@
       "description": "An exploration of Spiral.xyz's mission and infrastructure, plus the story behind the Bitcoin Merchant Community Website—how it came to life and what it means for Bitcoin commerce.",
       "overview": "Mat Balez presents a comprehensive overview of Spiral.xyz, covering everything Spiral does to support Bitcoin and Lightning infrastructure. The presentation also dives deep into the Bitcoin Merchant Community Website project, sharing the origin story of how this initiative came to life and its impact on the Bitcoin merchant ecosystem.",
       "presenterId": "presenter-mat-balez",
-      "date": "2025-01-15",
+      "eventId": "event-builder-vancouver-launch",
+      "date": "2025-11-18",
       "duration": "45 minutes",
       "links": [
         {
@@ -191,7 +193,7 @@
       "overview": "Martin Montero presents on Nostr, a decentralized social protocol that pairs naturally with Bitcoin. The presentation explores how Nostr enables censorship-resistant social networking, integrates with Lightning payments for micropayments and tips, and how it's being used to build community in Vancouver. Attendees will learn about Nostr's architecture, its advantages over traditional social media, and how builders can leverage Nostr to create decentralized social and economic interactions.",
       "presenterId": "presenter-martin-montero",
       "eventId": "event-builder-vancouver-launch",
-      "date": "2025-02-15",
+      "date": "2025-11-18",
       "duration": "45 minutes",
       "links": [
         {
@@ -258,7 +260,7 @@
       "overview": "Eric Chennels presents a deep dive into building the Bepsi machine, a Bitcoin vending machine that demonstrates practical Bitcoin and Lightning integration in a physical device. The presentation covers the hardware and software tools used in the project, the technical challenges encountered, and how vibe coding methodologies helped streamline development. Attendees will learn about the practical aspects of building Bitcoin-native hardware, the integration of Lightning payments, and how modern development workflows can accelerate Bitcoin product development.",
       "presenterId": "presenter-eric-chennels",
       "eventId": "event-builder-vancouver-launch",
-      "date": "2025-02-15",
+      "date": "2025-11-18",
       "duration": "30-45 minutes",
       "links": [
         {
@@ -316,7 +318,7 @@
       "overview": "JP shares the story of Bitpoints.me, a Bitcoin-native rewards system that started as a simple idea: give customers rewards at a local coffeeshop. Instead of airline miles or hotel points, JP wanted something better—something that teaches people about Bitcoin. The presentation covers how Bitpoints.me merges Cashu with Bitchat to create an interoperable, educational rewards platform where users see 'points' but behind the scenes they're 1:1 pegged to sats. Learn how this community-first, not corporate, system enables offline use for kids, offers discounts when paying with Points/sats, and creates a model where rewards gain value over time.",
       "presenterId": "presenter-jp",
       "eventId": "event-builder-vancouver-launch",
-      "date": "2025-02-15",
+      "date": "2025-11-18",
       "links": [
         {
           "text": "Bitpoints.me",
