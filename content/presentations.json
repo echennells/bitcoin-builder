@@ -1,6 +1,60 @@
 {
   "presentations": [
     {
+      "id": "presentation-event-kickoff",
+      "title": "Event Kickoff & Housekeeping",
+      "slug": "event-kickoff-housekeeping",
+      "description": "Welcome and housekeeping for Builder Vancouver's launch event, including agenda overview and community guidelines.",
+      "overview": "A friendly welcome presentation to kick off Builder Vancouver's launch event. We'll thank everyone for coming, acknowledge our host Funk Coffee, go over housekeeping rules, discuss the evening's agenda, and establish our community guidelines for respectful and productive discussion.",
+      "presenterId": "presenter-justin-ohalloran",
+      "eventId": "event-builder-vancouver-launch",
+      "date": "2025-11-18",
+      "duration": "5-10 minutes",
+      "sections": [
+        {
+          "title": "Welcome & Thank You",
+          "body": "Thank you all for coming out tonight! We're thrilled to have you here for Builder Vancouver's launch event. A special thank you to Funk Coffee for hosting us and providing this wonderful space. We're grateful for their support of the Bitcoin builder community in Vancouver."
+        },
+        {
+          "title": "Housekeeping",
+          "body": "A few quick housekeeping items: please help yourself to pizza and refreshments, and if you have any questions or need anything, feel free to ask any of the organizers."
+        },
+        {
+          "title": "Tonight's Agenda",
+          "body": "Here's what we have planned for the evening: We'll start with a brief introduction to Builder Vancouver, followed by six lightning presentations covering Spiral, Nostr, the Bepsi Machine, Bitpoints.me, and Vibe Coding. After the presentations, we'll dive into news topics discussion, and then open the floor for questions and topic suggestions."
+        },
+        {
+          "title": "Community Guidelines: We're All Learning",
+          "body": "First and foremost, remember that no one here is an expert—we're all trying our best. We're all on different parts of our Bitcoin journey, and that's what makes this community valuable. If you want to correct someone or add additional context, please find time to do so after the event. This keeps our discussions flowing smoothly and ensures everyone feels comfortable participating."
+        },
+        {
+          "title": "Questions During Presentations",
+          "body": "During the presentations, we ask that you hold your questions until after each presentation is finished. This ensures the presenter can stay on track and cover all their material. We'll have dedicated Q&A time after all presentations, and we'll also open the floor for discussion towards the end of the event."
+        },
+        {
+          "title": "Open Discussion Time",
+          "body": "Towards the end of the event, we'll open the floor up for questions and discussion. This is your chance to dive deeper into topics, share your thoughts, and connect with fellow builders. We want to hear from you!"
+        },
+        {
+          "title": "A Safe Space for Learning",
+          "body": "This is a safe space for open discussion and dialogue. There are no dumb questions—we're all approaching Bitcoin from different angles, with different backgrounds and levels of experience. Whether you're a seasoned developer or just curious about Bitcoin, your perspective is valuable. Let's learn from each other and build together."
+        }
+      ],
+      "meta": {
+        "title": "Event Kickoff & Housekeeping | Builder Vancouver",
+        "description": "Welcome and housekeeping for Builder Vancouver's launch event, including agenda overview and community guidelines.",
+        "keywords": [
+          "builder",
+          "vancouver",
+          "bitcoin",
+          "kickoff",
+          "housekeeping",
+          "community",
+          "guidelines"
+        ]
+      }
+    },
+    {
       "id": "presentation-builder-vancouver-intro",
       "title": "Welcome to Builder Vancouver",
       "slug": "builder-vancouver-intro",

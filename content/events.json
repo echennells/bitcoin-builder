@@ -9,6 +9,7 @@
       "cityId": "city-vancouver",
       "sponsorIds": ["sponsor-funk-coffee", "sponsor-spiral"],
       "presentationIds": [
+        "presentation-event-kickoff",
         "presentation-builder-vancouver-intro",
         "presentation-spiral-bitcoin-merchant-community",
         "presentation-martin-montero-nostr-vancouver",
@@ -28,53 +29,61 @@
         {
           "startTime": "6:30 PM",
           "endTime": "6:40 PM",
-          "title": "Introduction & Overview",
-          "description": "Introduction to Builder Vancouver and overview of the evening.",
+          "title": "Event Kickoff & Housekeeping",
+          "description": "Welcome, thank yous, housekeeping, agenda overview, and community guidelines.",
           "type": "presentation",
-          "presentationId": "presentation-builder-vancouver-intro"
+          "presentationId": "presentation-event-kickoff"
         },
         {
           "startTime": "6:40 PM",
           "endTime": "6:50 PM",
+          "title": "Introduction to Builder Vancouver",
+          "description": "Introduction to Builder Vancouver and what to expect at our meetups.",
+          "type": "presentation",
+          "presentationId": "presentation-builder-vancouver-intro"
+        },
+        {
+          "startTime": "6:50 PM",
+          "endTime": "7:00 PM",
           "title": "Spiral.xyz and the Bitcoin Merchant Community Website",
           "description": "Mat Balez presents a comprehensive overview of Spiral.xyz and the Bitcoin Merchant Community Website.",
           "type": "presentation",
           "presentationId": "presentation-spiral-bitcoin-merchant-community"
         },
         {
-          "startTime": "6:50 PM",
-          "endTime": "7:00 PM",
+          "startTime": "7:00 PM",
+          "endTime": "7:10 PM",
           "title": "Nostr and Building Community in Vancouver",
           "description": "Martin Montero from Rabble Labs presents on Nostr and the community being built in Vancouver.",
           "type": "presentation",
           "presentationId": "presentation-martin-montero-nostr-vancouver"
         },
         {
-          "startTime": "7:00 PM",
-          "endTime": "7:10 PM",
+          "startTime": "7:10 PM",
+          "endTime": "7:20 PM",
           "title": "The Bepsi Machine: Building a Bitcoin Vending Machine",
           "description": "Eric Chennels discusses the tools and techniques used to build the Bepsi machine—a Bitcoin vending machine—and how vibe coding accelerated the development process.",
           "type": "presentation",
           "presentationId": "presentation-bepsi-machine-eric-chennels"
         },
         {
-          "startTime": "7:10 PM",
-          "endTime": "7:20 PM",
+          "startTime": "7:20 PM",
+          "endTime": "7:30 PM",
           "title": "Introducing Bitpoints.me – A Bitcoin-native rewards system",
           "description": "JP shares the story of Bitpoints.me, a Bitcoin-native rewards system that transforms traditional loyalty points into sats.",
           "type": "presentation",
           "presentationId": "presentation-bitpoints-me"
         },
         {
-          "startTime": "7:20 PM",
-          "endTime": "7:30 PM",
+          "startTime": "7:30 PM",
+          "endTime": "7:40 PM",
           "title": "Vibe Coding the Builder Resource Center",
           "description": "How the Builder Ops Team uses structured content, ChatGPT, and Cursor Agents to ship Bitcoin education faster.",
           "type": "presentation",
           "presentationId": "presentation-vibe-coding-builder-2025"
         },
         {
-          "startTime": "7:30 PM",
+          "startTime": "7:40 PM",
           "endTime": "7:50 PM",
           "title": "News Topics Discussion",
           "description": "Discussion of current Bitcoin news topics and developments.",
