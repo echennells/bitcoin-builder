@@ -7,7 +7,10 @@
       "time": "6:00 PM - 9:00 PM",
       "location": "TBD, Vancouver",
       "cityId": "city-vancouver",
-      "presentationIds": ["presentation-builder-vancouver-intro", "presentation-martin-montero-nostr-vancouver"],
+      "presentationIds": [
+        "presentation-builder-vancouver-intro",
+        "presentation-martin-montero-nostr-vancouver"
+      ],
       "description": "Join us for the inaugural Builder Vancouver event! We'll introduce the Builder movement, explore Vancouver's Bitcoin ecosystem, and kick off our monthly meetup series. This is the perfect opportunity to meet fellow builders, learn about our community, and get involved.",
       "schedule": [
         {
