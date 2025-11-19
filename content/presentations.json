@@ -257,6 +257,8 @@
       "description": "Eric Chennels discusses the tools and techniques used to build the Bepsi machine—a Bitcoin vending machine—and how vibe coding accelerated the development process.",
       "overview": "Eric Chennels presents a deep dive into building the Bepsi machine, a Bitcoin vending machine that demonstrates practical Bitcoin and Lightning integration in a physical device. The presentation covers the hardware and software tools used in the project, the technical challenges encountered, and how vibe coding methodologies helped streamline development. Attendees will learn about the practical aspects of building Bitcoin-native hardware, the integration of Lightning payments, and how modern development workflows can accelerate Bitcoin product development.",
       "presenterId": "presenter-eric-chennels",
+      "eventId": "event-builder-vancouver-launch",
+      "date": "2025-02-15",
       "duration": "30-45 minutes",
       "links": [
         {
@@ -313,6 +315,8 @@
       "description": "A Bitcoin-native rewards system born from a coffeeshop hobby project that transforms traditional loyalty points into sats, teaching people about Bitcoin through familiar UX patterns.",
       "overview": "JP shares the story of Bitpoints.me, a Bitcoin-native rewards system that started as a simple idea: give customers rewards at a local coffeeshop. Instead of airline miles or hotel points, JP wanted something better—something that teaches people about Bitcoin. The presentation covers how Bitpoints.me merges Cashu with Bitchat to create an interoperable, educational rewards platform where users see 'points' but behind the scenes they're 1:1 pegged to sats. Learn how this community-first, not corporate, system enables offline use for kids, offers discounts when paying with Points/sats, and creates a model where rewards gain value over time.",
       "presenterId": "presenter-jp",
+      "eventId": "event-builder-vancouver-launch",
+      "date": "2025-02-15",
       "links": [
         {
           "text": "Bitpoints.me",
