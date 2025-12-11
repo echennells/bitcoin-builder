@@ -488,7 +488,7 @@
         },
         {
           "title": "Lightning as an Interoperability Layer",
-          "body": "Lightning is evolving beyond just a payment network - it's becoming an interoperability layer for Bitcoin ecosystem protocols. Several newer approaches use Lightning for settlement while offering different developer experiences and trust models.\n\nThis is why alternatives like Spark are emerging: they abstract away Lightning's operational complexity while maintaining interoperability with the broader Lightning network. You can receive payments from any Lightning wallet, but you don't have to manage channels yourself.\n\nThese protocols don't require running your own node or managing channels, but they involve different trust models and tradeoffs."
+          "body": "Lightning is becoming an interoperability layer for Bitcoin payment protocols. Several newer payment approaches use Lightning for settlement while offering different developer experiences and trust models.\n\nThis is why alternatives like Spark are emerging: they abstract away Lightning's operational complexity while maintaining interoperability with the broader Lightning network. You can receive payments from any Lightning wallet, but you don't have to manage channels yourself.\n\nThese protocols don't require running your own node or managing channels, but they involve different trust models and tradeoffs."
         },
         {
           "title": "Two Lightning Integration Approaches",
