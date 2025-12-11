@@ -487,6 +487,10 @@
           ]
         },
         {
+          "title": "Lightning as an Interoperability Layer",
+          "body": "Lightning is evolving beyond just a payment network - it's becoming an interoperability layer for Bitcoin ecosystem protocols. Several newer approaches use Lightning for settlement while offering different developer experiences and trust models.\n\nThis is why alternatives like Spark are emerging: they abstract away Lightning's operational complexity while maintaining interoperability with the broader Lightning network. You can receive payments from any Lightning wallet, but you don't have to manage channels yourself.\n\nThese protocols don't require running your own node or managing channels, but they involve different trust models and tradeoffs."
+        },
+        {
           "title": "Two Lightning Integration Approaches",
           "body": "There are two main approaches to integrating Lightning payments, each with different trust models and tradeoffs:\n\n**Spark**\nSelf-custodial Lightning with simplified developer experience. Different trust model than running your own node - you don't manage channels or liquidity yourself. Has swap fees. Works for production.\n\n**Self-Sovereign Lightning**\nRun your own Lightning node. You control everything: channels, keys, liquidity, backups. Complex to operate but fully sovereign.\n\nPick based on what trust model works for your app and users."
         }
