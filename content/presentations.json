@@ -541,7 +541,7 @@
         },
         {
           "title": "Demo: Spark Soundboard Architecture",
-          "body": "The Spark Soundboard demonstrates a simple Lightning payment flow:\n\n1. User wants to trigger a sound effect\n2. App generates a Lightning invoice via Spark API\n3. User scans QR code or pays invoice from Lightning wallet\n4. Spark handles Lightning payment routing\n5. Payment confirmation triggers sound effect\n6. User sees/hears instant feedback\n\nKey integration points:\n• Invoice generation (Spark SDK)\n• Payment verification (webhooks or polling)\n• User feedback (instant confirmation)\n\nThe entire payment flow happens in seconds, with minimal code required.",
+          "body": "The Spark Soundboard is a Lightning-enabled soundboard that charges 100 sats per sound effect:\n\n**User Flow:**\n1. User clicks a sound button (airhorn, drumroll, tada, or crickets)\n2. Backend creates Lightning invoice using Spark SDK\n3. QR code modal appears with the invoice\n4. User pays with any Lightning wallet\n5. Backend polls wallet transfers every 3 seconds to detect payment\n6. Frontend polls payment status every second\n7. When payment confirmed, sound plays automatically\n\n**Tech Stack:**\n• Node.js + Express backend\n• Vanilla HTML/CSS/JavaScript frontend\n• @buildonspark/spark-sdk for wallet and invoices\n• qrcodejs for QR code generation\n• In-memory payment tracking (Map)\n\nNo login required, no database needed - just Lightning payments and sound effects.",
           "links": [
             {
               "text": "View Code on GitHub",
@@ -551,8 +551,8 @@
           ]
         },
         {
-          "title": "Code Walkthrough: Key Integration Points",
-          "body": "The Spark Soundboard shows three main integration patterns:\n\n1. Invoice Generation:\n• Call Spark API to create invoice\n• Specify amount, description, expiry\n• Get back invoice string and QR code data\n\n2. Payment Verification:\n• Set up webhook endpoint for payment notifications\n• Or poll Spark API for payment status\n• Verify payment amount and invoice ID\n\n3. User Experience:\n• Display QR code for wallet scanning\n• Show payment pending state\n• Instant feedback on payment confirmation\n• Handle payment failures gracefully\n\nCheck the GitHub repo for complete code examples and implementation details."
+          "title": "Code Walkthrough: How It Actually Works",
+          "body": "The Spark Soundboard demonstrates a complete Lightning payment flow:\n\n**Backend (Node.js + Express):**\n• Initialize Spark wallet using @buildonspark/spark-sdk\n• Create Lightning invoices via sparkWallet.createLightningInvoice()\n• Poll for payment confirmation by checking wallet transfers every 3 seconds\n• Store pending payments in-memory (Map)\n• Serve static frontend files\n\n**Frontend (Vanilla HTML/CSS/JS):**\n• Display sound buttons (airhorn, drumroll, tada, crickets)\n• Generate QR code for invoice using qrcodejs library\n• Poll backend for payment status\n• Auto-play sound when payment confirmed\n\n**Key Integration Points:**\n1. Wallet initialization with mnemonic phrase\n2. Invoice creation (100 sats per sound)\n3. Payment monitoring via sparkWallet.getTransfers()\n4. Payment status polling (frontend checks every second)\n\nCheck the GitHub repo for the complete source code."
         },
         {
           "title": "Getting Started with Spark",
